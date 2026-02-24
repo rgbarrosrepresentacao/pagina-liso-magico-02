@@ -1058,6 +1058,210 @@
                 font-size: 1.7rem
             }
         }
+
+        /* ===== PROVA SOCIAL SECTION ===== */
+        .social-proof-section {
+            background: linear-gradient(180deg, #FAF8F5, #F5EDD8);
+            padding: 70px 0
+        }
+
+        .social-proof-section .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center
+        }
+
+        /* Wrapper externo: tem espaço para os botões */
+        .ps-carousel-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 360px;
+            margin: 40px auto 0;
+            padding: 0 44px;
+            user-select: none;
+            box-sizing: border-box
+        }
+
+        /* Trilha: overflow escondido AQUI, não no wrapper */
+        .ps-carousel-track {
+            overflow: hidden;
+            border-radius: 20px;
+            width: 100%
+        }
+
+        /* Trilha deslizante */
+        .ps-carousel {
+            display: flex;
+            transition: transform .45s cubic-bezier(.4, 0, .2, 1);
+            will-change: transform
+        }
+
+        /* Cada slide */
+        .ps-slide {
+            min-width: 100%;
+            padding: 0 4px;
+            box-sizing: border-box
+        }
+
+        /* Caixa de mídia */
+        .ps-media-box {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            background: #1A1208;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, .2);
+            aspect-ratio: 9/16;
+            max-height: 520px
+        }
+
+        .ps-media-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block
+        }
+
+        .ps-video-box video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            background: #000
+        }
+
+        /* Tag no canto da mídia */
+        .ps-media-tag {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            background: rgba(201, 168, 76, .92);
+            color: #1A1208;
+            font-size: .72rem;
+            font-weight: 800;
+            padding: 5px 12px;
+            border-radius: 100px;
+            text-transform: uppercase;
+            letter-spacing: .5px;
+            backdrop-filter: blur(4px)
+        }
+
+        /* Área de texto abaixo da mídia */
+        .ps-slide-info {
+            text-align: center;
+            padding: 18px 8px 8px
+        }
+
+        .ps-stars {
+            color: var(--gold);
+            font-size: 1rem;
+            letter-spacing: 2px;
+            margin-bottom: 8px
+        }
+
+        .ps-caption {
+            color: #5C4A2A;
+            font-size: .9rem;
+            line-height: 1.5;
+            font-style: italic
+        }
+
+        /* Botões prev/next */
+        .ps-nav {
+            position: absolute;
+            top: 42%;
+            transform: translateY(-50%);
+            background: rgba(201, 168, 76, .9);
+            color: #1A1208;
+            border: none;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            font-size: 1.6rem;
+            line-height: 1;
+            cursor: pointer;
+            z-index: 10;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, .2);
+            transition: background .2s, transform .2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-bottom: 2px
+        }
+
+        .ps-nav:hover {
+            background: var(--gold);
+            transform: translateY(-50%) scale(1.1)
+        }
+
+        .ps-prev {
+            left: 2px
+        }
+
+        .ps-next {
+            right: 2px
+        }
+
+        /* Dots */
+        .ps-dots {
+            display: flex;
+            justify-content: center;
+            gap: 6px;
+            margin-top: 16px;
+            flex-wrap: wrap
+        }
+
+        .ps-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(201, 168, 76, .35);
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            transition: background .25s, transform .25s
+        }
+
+        .ps-dot.active {
+            background: var(--gold);
+            transform: scale(1.4)
+        }
+
+        /* Contador */
+        .ps-counter {
+            text-align: center;
+            margin-top: 10px;
+            font-size: .82rem;
+            color: #9B8055;
+            font-weight: 600
+        }
+
+        /* Responsivo mobile */
+        @media(max-width:600px) {
+            .ps-carousel-wrapper {
+                max-width: 100%;
+                margin-left: 0;
+                margin-right: 0
+            }
+
+            .ps-prev {
+                left: -10px
+            }
+
+            .ps-next {
+                right: -10px
+            }
+
+            .ps-nav {
+                width: 36px;
+                height: 36px;
+                font-size: 1.3rem
+            }
+
+            .ps-media-box {
+                max-height: 440px
+            }
+        }
     </style>
 </head>
 
@@ -1185,18 +1389,288 @@
         </div>
     </section>
 
-    <!-- ANTES E DEPOIS -->
-    <section class="ba-section">
+    <!-- PROVA SOCIAL - TRANSFORMAÇÕES REAIS -->
+    <section class="social-proof-section">
         <div class="container">
             <h2 class="section-title">Transformações <span>Reais, Resultados Reais</span></h2>
-            <p class="section-sub">Veja o poder do Liso Mágico Premium Gold nas fotos de antes e depois de clientes
-                reais.</p>
-            <div class="ba-grid" style="grid-template-columns:1fr">
-                <div class="ba-card">
-                    <img src="imagem/Imagens de Antes e Depois.png.jpeg"
-                        alt="Antes e Depois - Transformação Real com Liso Mágico">
-                    <div class="ba-label">✨ Transformação Real — Feita em Casa!</div>
-                </div>
+            <p class="section-sub">Veja os vídeos e fotos enviados por clientes reais — resultados verdadeiros, sem
+                filtro!</p>
+
+            <!-- CARROSSEL PRINCIPAL -->
+            <div class="ps-carousel-wrapper">
+                <div class="ps-carousel-track">
+                    <div class="ps-carousel" id="psCarousel">
+
+
+                        <!-- VÍDEO 1 -->
+                        <div class="ps-slide">
+                            <div class="ps-media-box ps-video-box">
+                                <video controls playsinline preload="none" poster="">
+                                    <source src="video/prova social 01.mp4.mp4" type="video/mp4">
+                                </video>
+                                <div class="ps-media-tag">🎥 Prova Social</div>
+                            </div>
+                            <div class="ps-slide-info">
+                                <div class="ps-stars">★★★★★</div>
+                                <p class="ps-caption">"Resultado incrível! Fiz em casa e ficou igual ao salão!"</p>
+                            </div>
+                        </div>
+
+                        <!-- VÍDEO 2 -->
+                        <div class="ps-slide">
+                            <div class="ps-media-box ps-video-box">
+                                <video controls playsinline preload="none">
+                                    <source src="video/prova social 02.mp4.mp4" type="video/mp4">
+                                </video>
+                                <div class="ps-media-tag">🎥 Transformação</div>
+                            </div>
+                            <div class="ps-slide-info">
+                                <div class="ps-stars">★★★★★</div>
+                                <p class="ps-caption">"Amei demais! Cabelo liso, brilhoso e sem formol!"</p>
+                            </div>
+                        </div>
+
+                        <!-- VÍDEO 3 -->
+                        <div class="ps-slide">
+                            <div class="ps-media-box ps-video-box">
+                                <video controls playsinline preload="none">
+                                    <source src="video/prova social 03.mp4.mp4" type="video/mp4">
+                                </video>
+                                <div class="ps-media-tag">🎥 Depoimento</div>
+                            </div>
+                            <div class="ps-slide-info">
+                                <div class="ps-stars">★★★★★</div>
+                                <p class="ps-caption">"Recomendo pra todas as amigas! Simplesmente perfeito!"</p>
+                            </div>
+                        </div>
+
+                        <!-- VÍDEO 4 -->
+                        <div class="ps-slide">
+                            <div class="ps-media-box ps-video-box">
+                                <video controls playsinline preload="none">
+                                    <source src="video/prova social 04.mp4.mp4" type="video/mp4">
+                                </video>
+                                <div class="ps-media-tag">🎥 Resultado Real</div>
+                            </div>
+                            <div class="ps-slide-info">
+                                <div class="ps-stars">★★★★★</div>
+                                <p class="ps-caption">"Comprei com medo e me surpreendi! Vale muito a pena!"</p>
+                            </div>
+                        </div>
+
+                        <!-- VÍDEO 5 -->
+                        <div class="ps-slide">
+                            <div class="ps-media-box ps-video-box">
+                                <video controls playsinline preload="none">
+                                    <source src="video/prova social 05.mp4.mp4" type="video/mp4">
+                                </video>
+                                <div class="ps-media-tag">🎥 Transformação</div>
+                            </div>
+                            <div class="ps-slide-info">
+                                <div class="ps-stars">★★★★★</div>
+                                <p class="ps-caption">"Meu cabelo nunca ficou tão lindo! Liso Mágico é real!"</p>
+                            </div>
+                        </div>
+
+                        <!-- VÍDEO 6 -->
+                        <div class="ps-slide">
+                            <div class="ps-media-box ps-video-box">
+                                <video controls playsinline preload="none">
+                                    <source src="video/prova social 06.mp4.mp4" type="video/mp4">
+                                </video>
+                                <div class="ps-media-tag">🎥 Depoimento</div>
+                            </div>
+                            <div class="ps-slide-info">
+                                <div class="ps-stars">★★★★★</div>
+                                <p class="ps-caption">"Produto chegou rápido e o resultado é incrível!"</p>
+                            </div>
+                        </div>
+
+                        <!-- VÍDEO 7 - Depoimento 1 -->
+                        <div class="ps-slide">
+                            <div class="ps-media-box ps-video-box">
+                                <video controls playsinline preload="none">
+                                    <source src="video/depoimento-01.mp4.mp4" type="video/mp4">
+                                </video>
+                                <div class="ps-media-tag">💬 Depoimento</div>
+                            </div>
+                            <div class="ps-slide-info">
+                                <div class="ps-stars">★★★★★</div>
+                                <p class="ps-caption">"Já usei 3 vezes e cada vez fica melhor! Amei!"</p>
+                            </div>
+                        </div>
+
+                        <!-- VÍDEO 8 - Depoimento 3 -->
+                        <div class="ps-slide">
+                            <div class="ps-media-box ps-video-box">
+                                <video controls playsinline preload="none">
+                                    <source src="video/depoimento-03.mp4.mp4" type="video/mp4">
+                                </video>
+                                <div class="ps-media-tag">💬 Depoimento</div>
+                            </div>
+                            <div class="ps-slide-info">
+                                <div class="ps-stars">★★★★★</div>
+                                <p class="ps-caption">"Fiz em casa pela primeira vez e ficou perfeito!"</p>
+                            </div>
+                        </div>
+
+                        <!-- VÍDEO 9 - Depoimento 4 -->
+                        <div class="ps-slide">
+                            <div class="ps-media-box ps-video-box">
+                                <video controls playsinline preload="none">
+                                    <source src="video/depoimento-04.mp4.mp4" type="video/mp4">
+                                </video>
+                                <div class="ps-media-tag">💬 Depoimento</div>
+                            </div>
+                            <div class="ps-slide-info">
+                                <div class="ps-stars">★★★★★</div>
+                                <p class="ps-caption">"Cabelo sedoso, sem frizz e sem sair de casa!"</p>
+                            </div>
+                        </div>
+
+                        <!-- VÍDEO 10 - Depoimento 5 -->
+                        <div class="ps-slide">
+                            <div class="ps-media-box ps-video-box">
+                                <video controls playsinline preload="none">
+                                    <source src="video/depoimento-5.mp4.mp4" type="video/mp4">
+                                </video>
+                                <div class="ps-media-tag">💬 Depoimento</div>
+                            </div>
+                            <div class="ps-slide-info">
+                                <div class="ps-stars">★★★★★</div>
+                                <p class="ps-caption">"Investi no kit 2 e já estou na segunda aplicação!"</p>
+                            </div>
+                        </div>
+
+                        <!-- VÍDEO 11 - Depoimento 6 -->
+                        <div class="ps-slide">
+                            <div class="ps-media-box ps-video-box">
+                                <video controls playsinline preload="none">
+                                    <source src="video/depoimento-06.mp4.mp4" type="video/mp4">
+                                </video>
+                                <div class="ps-media-tag">💬 Depoimento</div>
+                            </div>
+                            <div class="ps-slide-info">
+                                <div class="ps-stars">★★★★★</div>
+                                <p class="ps-caption">"Simplesmente maravilhoso! Indico de olhos fechados!"</p>
+                            </div>
+                        </div>
+
+                        <!-- VÍDEO 12 - Depoimento 7 -->
+                        <div class="ps-slide">
+                            <div class="ps-media-box ps-video-box">
+                                <video controls playsinline preload="none">
+                                    <source src="video/depoimento-07.mp4.mp4" type="video/mp4">
+                                </video>
+                                <div class="ps-media-tag">💬 Depoimento</div>
+                            </div>
+                            <div class="ps-slide-info">
+                                <div class="ps-stars">★★★★★</div>
+                                <p class="ps-caption">"Produto chegou bem embalado e o resultado é show!"</p>
+                            </div>
+                        </div>
+
+                        <!-- IMAGEM 1 -->
+                        <div class="ps-slide">
+                            <div class="ps-media-box">
+                                <img src="imagem/prova social-01.png.jpg" alt="Prova Social - Resultado Real cliente 1"
+                                    loading="lazy">
+                                <div class="ps-media-tag">📸 Foto Real</div>
+                            </div>
+                            <div class="ps-slide-info">
+                                <div class="ps-stars">★★★★★</div>
+                                <p class="ps-caption">"Olha que resultado! Enviado pela nossa cliente!"</p>
+                            </div>
+                        </div>
+
+                        <!-- IMAGEM 2 -->
+                        <div class="ps-slide">
+                            <div class="ps-media-box">
+                                <img src="imagem/prova social-02.png.jpg" alt="Prova Social - Resultado Real cliente 2"
+                                    loading="lazy">
+                                <div class="ps-media-tag">📸 Foto Real</div>
+                            </div>
+                            <div class="ps-slide-info">
+                                <div class="ps-stars">★★★★★</div>
+                                <p class="ps-caption">"Mais uma transformação incrível de uma cliente real!"</p>
+                            </div>
+                        </div>
+
+                        <!-- IMAGEM 3 -->
+                        <div class="ps-slide">
+                            <div class="ps-media-box">
+                                <img src="imagem/prova social-03.png.jpg" alt="Prova Social - Resultado Real cliente 3"
+                                    loading="lazy">
+                                <div class="ps-media-tag">📸 Foto Real</div>
+                            </div>
+                            <div class="ps-slide-info">
+                                <div class="ps-stars">★★★★★</div>
+                                <p class="ps-caption">"Resultado real, sem filtro! Fibra totalmente transformada!"</p>
+                            </div>
+                        </div>
+
+                        <!-- IMAGEM 4 -->
+                        <div class="ps-slide">
+                            <div class="ps-media-box">
+                                <img src="imagem/prova social-04.png.jpg" alt="Prova Social - Resultado Real cliente 4"
+                                    loading="lazy">
+                                <div class="ps-media-tag">📸 Foto Real</div>
+                            </div>
+                            <div class="ps-slide-info">
+                                <div class="ps-stars">★★★★★</div>
+                                <p class="ps-caption">"Liso, brilhante e sem uma gota de formol!"</p>
+                            </div>
+                        </div>
+
+                        <!-- IMAGEM 5 -->
+                        <div class="ps-slide">
+                            <div class="ps-media-box">
+                                <img src="imagem/prova social-05.png.jpg" alt="Prova Social - Resultado Real cliente 5"
+                                    loading="lazy">
+                                <div class="ps-media-tag">📸 Foto Real</div>
+                            </div>
+                            <div class="ps-slide-info">
+                                <div class="ps-stars">★★★★★</div>
+                                <p class="ps-caption">"Fiz pela primeira vez e me apaixonei pelo resultado!"</p>
+                            </div>
+                        </div>
+
+                        <!-- IMAGEM de Antes e Depois -->
+                        <div class="ps-slide">
+                            <div class="ps-media-box">
+                                <img src="imagem/Imagens de Antes e Depois.png.jpeg"
+                                    alt="Antes e Depois - Transformação Real com Liso Mágico" loading="lazy">
+                                <div class="ps-media-tag">✨ Antes & Depois</div>
+                            </div>
+                            <div class="ps-slide-info">
+                                <div class="ps-stars">★★★★★</div>
+                                <p class="ps-caption">"A diferença é impressionante! Transformação real feita em casa!"
+                                </p>
+                            </div>
+                        </div>
+
+                    </div><!-- fim .ps-carousel -->
+
+                </div><!-- fim .ps-carousel-track -->
+
+                <!-- Botões de navegação -->
+                <button class="ps-nav ps-prev" onclick="psMove(-1)" aria-label="Anterior">&#8249;</button>
+                <button class="ps-nav ps-next" onclick="psMove(1)" aria-label="Próximo">&#8250;</button>
+
+
+                <!-- Indicadores -->
+                <div class="ps-dots" id="psDots"></div>
+            </div>
+
+            <!-- Contador de slides -->
+            <div class="ps-counter">
+                <span id="psCurrentNum">1</span> de <span id="psTotalNum">17</span>
+            </div>
+
+            <!-- CTA abaixo -->
+            <div style="text-align:center;margin-top:40px">
+                <a href="#kits" class="btn-primary" style="display:inline-block;width:auto">🌟 QUERO O MEU
+                    AGORA!</a>
             </div>
         </div>
     </section>
@@ -1307,10 +1781,10 @@
                         <h3>Kit 1 Unidade</h3>
                         <p class="kit-desc">1 frasco de 500ml — Para Experimentar e se Apaixonar!</p>
                         <div class="kit-compare">
-                            <span class="kit-old">De: <s>R$250,00</s></span>
-                            <span class="kit-save">💰 Economize R$103,00!</span>
+                            <span class="kit-old">De: <s>R$200,00</s></span>
+                            <span class="kit-save">💰 Economize R$100,00!</span>
                         </div>
-                        <div class="kit-price">R$147<span>,00</span></div>
+                        <div class="kit-price">R$99<span>,99</span></div>
                         <div class="kit-installments">✅ Pague na entrega ou parcele em até 12x no cartão</div>
                         <a href="https://entrega.logzz.com.br/pay/kit-1-promocao" class="btn-kit">COMPRAR 1
                             UNIDADE (Pague na Entrega)</a>
@@ -1325,10 +1799,10 @@
                         <p class="kit-desc">2 frascos de 500ml — Economize e Garanta Mais Aplicações para um Liso
                             Contínuo!</p>
                         <div class="kit-compare">
-                            <span class="kit-old">De: <s>R$303,00</s></span>
-                            <span class="kit-save">💰 Economize R$106,00!</span>
+                            <span class="kit-old">De: <s>R$300,00</s></span>
+                            <span class="kit-save">💰 Economize R$132,00!</span>
                         </div>
-                        <div class="kit-price">R$197<span>,00</span></div>
+                        <div class="kit-price">R$167<span>,99</span></div>
                         <div class="kit-installments">✅ Pague na entrega ou parcele em até 12x no cartão</div>
                         <a href="https://entrega.logzz.com.br/pay/nszok-kit-com-2-unidades" class="btn-kit">COMPRAR KIT
                             2 (Pague na Entrega)</a>
@@ -1348,7 +1822,8 @@
                         </div>
                         <div class="kit-price">R$247<span>,00</span></div>
                         <div class="kit-installments">✅ Pague na entrega ou parcele em até 12x no cartão</div>
-                        <a href="https://entrega.logzz.com.br/pay/kit-3-progressivas-liso-magico" class="btn-kit">COMPRAR KIT
+                        <a href="https://entrega.logzz.com.br/pay/kit-3-progressivas-liso-magico"
+                            class="btn-kit">COMPRAR KIT
                             3 (Pague na Entrega)</a>
                     </div>
                 </div>
@@ -1563,6 +2038,98 @@
             el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
             observer.observe(el);
         });
+        // ===== CARROSSEL PROVA SOCIAL =====
+        (function () {
+            const carousel = document.getElementById('psCarousel');
+            if (!carousel) return;
+
+            const section = document.querySelector('.social-proof-section');
+            const slides = carousel.querySelectorAll('.ps-slide');
+            const total = slides.length;
+            let current = 0;
+            let sectionVisible = false;
+
+            // Atualiza contador
+            const numEl = document.getElementById('psCurrentNum');
+            const totEl = document.getElementById('psTotalNum');
+            if (totEl) totEl.textContent = total;
+
+            // Cria dots
+            const dotsContainer = document.getElementById('psDots');
+            slides.forEach((_, i) => {
+                const d = document.createElement('button');
+                d.className = 'ps-dot' + (i === 0 ? ' active' : '');
+                d.setAttribute('aria-label', 'Slide ' + (i + 1));
+                d.addEventListener('click', () => goTo(i));
+                dotsContainer.appendChild(d);
+            });
+
+            // Retorna o vídeo do slide atual (se houver)
+            function getCurrentVideo() {
+                return slides[current].querySelector('video');
+            }
+
+            function pauseAllVideos() {
+                carousel.querySelectorAll('video').forEach(v => { v.pause(); });
+            }
+
+            function playCurrentVideo() {
+                const v = getCurrentVideo();
+                if (!v) return;
+                v.play().catch(() => {
+                    // Se falhar com som, tenta mudo
+                    v.muted = true;
+                    v.play().catch(() => { });
+                });
+            }
+
+            function goTo(idx) {
+                pauseAllVideos();
+                current = (idx + total) % total;
+                carousel.style.transform = 'translateX(-' + (current * 100) + '%)';
+                dotsContainer.querySelectorAll('.ps-dot').forEach((d, i) => {
+                    d.classList.toggle('active', i === current);
+                });
+                if (numEl) numEl.textContent = current + 1;
+                // Toca o vídeo do novo slide se a seção estiver visível
+                if (sectionVisible) {
+                    setTimeout(() => playCurrentVideo(), 450); // aguarda animação do slide
+                }
+            }
+
+            // Expõe função global para os botões onclick
+            window.psMove = function (dir) { goTo(current + dir); };
+
+            // ===== AUTOPLAY AO ROLAR ATÉ A SEÇÃO =====
+            if ('IntersectionObserver' in window && section) {
+                const sectionObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            sectionVisible = true;
+                            playCurrentVideo();
+                        } else {
+                            sectionVisible = false;
+                            pauseAllVideos();
+                        }
+                    });
+                }, { threshold: 0.3 }); // 30% da seção visível = toca
+                sectionObserver.observe(section);
+            }
+
+            // ===== SWIPE TOUCH MOBILE =====
+            let startX = 0;
+            let isDragging = false;
+            carousel.addEventListener('touchstart', e => {
+                startX = e.changedTouches[0].clientX;
+                isDragging = true;
+            }, { passive: true });
+            carousel.addEventListener('touchend', e => {
+                if (!isDragging) return;
+                isDragging = false;
+                const diff = startX - e.changedTouches[0].clientX;
+                if (Math.abs(diff) > 40) goTo(current + (diff > 0 ? 1 : -1));
+            }, { passive: true });
+        })();
     </script>
 </body>
 
