@@ -63,6 +63,226 @@
             --red: #C0392B;
         }
 
+        /* COUNTDOWN TIMER */
+        .countdown-section {
+            background: linear-gradient(135deg, #1A0A0A, #3D0808, #1A0A0A);
+            padding: 28px 20px;
+            text-align: center;
+        }
+
+        .countdown-label {
+            color: #FF6B6B;
+            font-weight: 800;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+            animation: blink 1.5s infinite;
+        }
+
+        .countdown-timer {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .countdown-block {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 107, 107, 0.4);
+            border-radius: 12px;
+            padding: 12px 18px;
+            min-width: 72px;
+        }
+
+        .countdown-num {
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: #FF6B6B;
+            line-height: 1;
+            font-family: 'Montserrat', sans-serif;
+            display: block;
+        }
+
+        .countdown-unit {
+            font-size: .65rem;
+            color: rgba(255, 255, 255, .6);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: block;
+            margin-top: 4px;
+        }
+
+        .countdown-sep {
+            color: #FF6B6B;
+            font-size: 1.8rem;
+            font-weight: 900;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .countdown-msg {
+            color: rgba(255, 255, 255, .8);
+            font-size: .9rem;
+            margin-top: 14px;
+            font-weight: 600;
+        }
+
+        /* KIT 2 SUPER FEATURED */
+        .kit-card.featured {
+            border-color: var(--gold);
+            transform: scale(1.05);
+            box-shadow: 0 16px 60px rgba(201, 168, 76, .35), 0 0 0 2px var(--gold);
+        }
+
+        .kit-featured-banner {
+            background: linear-gradient(135deg, var(--gold-dark), var(--gold), var(--gold-light));
+            color: var(--dark);
+            text-align: center;
+            padding: 10px;
+            font-weight: 900;
+            font-size: .85rem;
+            text-transform: uppercase;
+            letter-spacing: .5px;
+        }
+
+        .kit-badge-pulse {
+            position: absolute;
+            top: 50px;
+            right: 16px;
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            color: var(--dark);
+            font-weight: 800;
+            font-size: .78rem;
+            padding: 6px 14px;
+            border-radius: 100px;
+            text-transform: uppercase;
+            letter-spacing: .5px;
+            animation: pulse-badge 1.5s ease-in-out infinite;
+        }
+
+        @keyframes pulse-badge {
+
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(201, 168, 76, .7);
+            }
+
+            50% {
+                box-shadow: 0 0 0 8px rgba(201, 168, 76, 0);
+            }
+        }
+
+        /* URGENCY UPGRADE */
+        .urgency-bar-v2 {
+            background: linear-gradient(135deg, #7D0000, var(--red), #7D0000);
+            padding: 28px 24px;
+            border-radius: 16px;
+            color: #fff;
+            text-align: center;
+            margin-top: 40px;
+            border: 1px solid rgba(255, 107, 107, .3);
+            box-shadow: 0 8px 32px rgba(192, 57, 43, .4);
+        }
+
+        .urgency-bar-v2 strong {
+            display: block;
+            font-size: 1.15rem;
+            margin-bottom: 14px;
+            text-transform: uppercase;
+            letter-spacing: .5px;
+        }
+
+        .stock-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: .82rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .stock-sold {
+            color: #FF8A80;
+        }
+
+        .stock-left {
+            color: #80FF9E;
+        }
+
+        .progress-track-v2 {
+            background: rgba(255, 255, 255, .2);
+            border-radius: 100px;
+            height: 16px;
+            max-width: 480px;
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-fill-v2 {
+            height: 100%;
+            background: linear-gradient(90deg, #FF6B6B, #FFD700, #FF6B6B);
+            border-radius: 100px;
+            width: 83%;
+            background-size: 200% 100%;
+            animation: shimmer-bar 2s linear infinite;
+        }
+
+        @keyframes shimmer-bar {
+            0% {
+                background-position: 200% 0;
+            }
+
+            100% {
+                background-position: -200% 0;
+            }
+        }
+
+        .urgency-sub {
+            font-size: .88rem;
+            opacity: .9;
+            margin-top: 10px;
+        }
+
+        /* HERO URGENCY BADGE */
+        .hero-urgency {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(192, 57, 43, .2);
+            border: 1px solid rgba(255, 107, 107, .5);
+            border-radius: 8px;
+            padding: 8px 16px;
+            color: #FF8A80;
+            font-size: .85rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            animation: blink 2s infinite;
+        }
+
+        /* DESTAQUES RÁPIDOS HERO */
+        .hero-bullets {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+
+        .hero-bullet {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: rgba(255, 255, 255, .9);
+            font-size: .92rem;
+            font-weight: 500;
+        }
+
+        .hero-bullet span {
+            font-size: 1rem;
+        }
+
         body {
             font-family: 'Montserrat', sans-serif;
             background: var(--pearl);
@@ -591,10 +811,7 @@
             transform: translateY(-6px)
         }
 
-        .kit-card.featured {
-            border-color: var(--gold);
-            transform: scale(1.03)
-        }
+        /* .kit-card.featured override is defined in the new urgency+featured block above */
 
         .kit-badge {
             position: absolute;
@@ -1320,18 +1537,24 @@
         <div class="hero-inner container">
             <div>
                 <div class="hero-badge">✨ Mais de 5.000 Mulheres Transformadas</div>
-                <h1>Cabelos <span>Lisos, Brilhantes</span> e Sem Frizz: O Segredo das Celebridades Agora na Sua Casa,
-                    Sem Formol!</h1>
-                <p>Descubra a revolução do alisamento capilar que já conquistou o coração de milhares de mulheres no
-                    Brasil. Segurança, praticidade e resultados incríveis, com a tranquilidade do <strong>Pagamento na
-                        Entrega!</strong></p>
+                <div class="hero-urgency">🔥 OFERTA POR TEMPO LIMITADO — Frete Grátis + Pague na Entrega</div>
+                <h1><span>Liso de Salão em Casa,</span> Sem Formol e Sem Gastar Fortunas! Descubra o Segredo das
+                    Celebridades para Cabelos Perfeitos com a Progressiva Liso Mágico Premium Gold</h1>
+                <p><strong style="color:#4ADE80">Pague Somente na Entrega</strong> e Tenha o Cabelo dos Seus Sonhos em
+                    Minutos! +5.000 Mulheres Já Transformadas. Aprovado pela ANVISA.</p>
                 <div class="stars">★★★★★</div>
                 <p class="trust-line">+5.000 avaliações 5 estrelas • Aprovado pela ANVISA • 100% Sem Formol</p>
+                <div class="hero-bullets">
+                    <div class="hero-bullet"><span>✅</span> Aplicação rápida em casa — resultado em minutos</div>
+                    <div class="hero-bullet"><span>✅</span> Sem formol, sem cheiro forte, sem risco</div>
+                    <div class="hero-bullet"><span>✅</span> Brilho espelhado que dura até 3 meses</div>
+                    <div class="hero-bullet"><span>✅</span> Frete grátis + pague só na entrega</div>
+                </div>
                 <div class="cod-badge">
                     🛡️ <div><strong>Pagamento 100% na Entrega</strong><br><small style="opacity:.8">Você só paga quando
                             o produto chegar na sua mão</small></div>
                 </div>
-                <a href="#kits" class="btn-primary">⚡ QUERO MEU LISO MÁGICO AGORA! (Pague Somente na Entrega)</a>
+                <a href="#kits" class="btn-primary">⚡ QUERO MEU CABELO LISO E PERFEITO AGORA! (Pague na Entrega) ⚡</a>
             </div>
             <div class="hero-img">
                 <img src="imagem/Imagem Principal da Seção Hero.png.jpeg"
@@ -1795,6 +2018,28 @@
         </div>
     </section>
 
+    <!-- COUNTDOWN URGÊNCIA -->
+    <section class="countdown-section">
+        <div class="countdown-label">⏰ ATENÇÃO: Oferta Exclusiva com Frete Grátis Expira Em:</div>
+        <div class="countdown-timer">
+            <div class="countdown-block">
+                <span class="countdown-num" id="cd-hours">47</span>
+                <span class="countdown-unit">Horas</span>
+            </div>
+            <div class="countdown-sep">:</div>
+            <div class="countdown-block">
+                <span class="countdown-num" id="cd-minutes">59</span>
+                <span class="countdown-unit">Minutos</span>
+            </div>
+            <div class="countdown-sep">:</div>
+            <div class="countdown-block">
+                <span class="countdown-num" id="cd-seconds">59</span>
+                <span class="countdown-unit">Segundos</span>
+            </div>
+        </div>
+        <p class="countdown-msg">🚚 Frete 100% Grátis + Pagamento na Entrega — só até o timer zerar!</p>
+    </section>
+
     <!-- KITS -->
     <section class="kits-section" id="kits">
         <div class="container">
@@ -1818,13 +2063,13 @@
                         <div class="kit-price">R$149<span>,00</span></div>
                         <div class="kit-installments">✅ Pague na entrega ou parcele em até 12x no cartão</div>
                         <a href="https://entrega.logzz.com.br/pay/memk40vl8/progressivalisomagico"
-                            class="btn-kit">COMPRAR 1
-                            UNIDADE (Pague na Entrega)</a>
+                            class="btn-kit">COMPRAR 1 UNIDADE (Pague na Entrega)</a>
                     </div>
                 </div>
-                <!-- KIT 2 -->
-                <div class="kit-card featured">
-                    <div class="kit-badge">⭐ Mais Vendido</div>
+                <!-- KIT 2 - DESTAQUE MÁXIMO -->
+                <div class="kit-card featured" style="position:relative">
+                    <div class="kit-featured-banner">🏆 MAIS VENDIDO — MELHOR CUSTO-BENEFÍCIO 🏆</div>
+                    <div class="kit-badge-pulse">⭐ Recomendado</div>
                     <img class="kit-img" src="imagem/Kit 2 Unidade.png" alt="Kit 2 Unidades - Liso Mágico Premium Gold">
                     <div class="kit-body">
                         <h3>Kit 2 Unidades</h3>
@@ -1836,8 +2081,9 @@
                         </div>
                         <div class="kit-price">R$197<span>,00</span></div>
                         <div class="kit-installments">✅ Pague na entrega ou parcele em até 12x no cartão</div>
-                        <a href="https://entrega.logzz.com.br/pay/memk40vl8/lisomagico" class="btn-kit">COMPRAR KIT
-                            2 (Pague na Entrega)</a>
+                        <a href="https://entrega.logzz.com.br/pay/memk40vl8/lisomagico" class="btn-kit"
+                            style="background:linear-gradient(135deg,#A07830,#F0D080,#A07830);font-size:1rem;padding:18px">⚡
+                            COMPRAR KIT 2 (Pague na Entrega)</a>
                     </div>
                 </div>
                 <!-- KIT 3 -->
@@ -1854,18 +2100,24 @@
                         </div>
                         <div class="kit-price">R$397<span>,00</span></div>
                         <div class="kit-installments">✅ Pague na entrega ou parcele em até 12x no cartão</div>
-                        <a href="https://entrega.logzz.com.br/pay/memk40vl8/liso3unidades" class="btn-kit">COMPRAR KIT
-                            3 (Pague na Entrega)</a>
+                        <a href="https://entrega.logzz.com.br/pay/memk40vl8/liso3unidades" class="btn-kit">COMPRAR KIT 3
+                            (Pague na Entrega)</a>
                     </div>
                 </div>
             </div>
-            <div class="urgency-bar">
-                🔥 ATENÇÃO: Oferta por Tempo Limitado! O estoque está quase esgotado. Garanta o seu antes que acabe!
-                <div class="progress-track">
-                    <div class="progress-fill"></div>
+            <!-- BARRA URGÊNCIA ESTOQUE -->
+            <div class="urgency-bar-v2">
+                <strong>🔥 ATENÇÃO: Oferta Exclusiva por Tempo Limitado! Garanta seu Liso Mágico com Frete Grátis e
+                    Pagamento na Entrega antes que o estoque acabe!</strong>
+                <div class="stock-label" style="max-width:480px;margin:0 auto">
+                    <span class="stock-sold">83% Vendido</span>
+                    <span class="stock-left">Restam Poucas Unidades!</span>
                 </div>
-                <p style="font-size:.85rem;margin-top:6px;opacity:.9">78% do estoque já foi vendido hoje — reste apenas
-                    22%!</p>
+                <div class="progress-track-v2">
+                    <div class="progress-fill-v2"></div>
+                </div>
+                <p class="urgency-sub">⚠️ 83% do estoque já foi vendido hoje — restam apenas <strong>17%</strong> das
+                    unidades!</p>
             </div>
         </div>
     </section>
@@ -1926,8 +2178,35 @@
     <section class="faq-section">
         <div class="container">
             <h2 class="section-title">Dúvidas <span>Frequentes</span></h2>
-            <p class="section-sub">Tiramos todas as suas dúvidas antes de você comprar.</p>
+            <p class="section-sub">Respondemos tudo antes de você comprar — sem letras miúdas, sem surpresas.</p>
             <div style="max-width:760px;margin:0 auto">
+
+                <div class="faq-item">
+                    <div class="faq-q">Como funciona o Pagamento na Entrega?</div>
+                    <div class="faq-a">
+                        <p>É simples e seguro! Você faz o pedido online agora, e só paga quando o produto for entregue
+                            diretamente em suas mãos. Nosso entregador estará equipado com maquininha para cartão
+                            (débito/crédito em até 12x), dinheiro ou Pix. <strong>Zero risco para você!</strong></p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-q">Qual a garantia do produto?</div>
+                    <div class="faq-a">
+                        <p>Oferecemos <strong>garantia de satisfação de 7 dias</strong> após o recebimento, conforme o
+                            Código de Defesa do Consumidor. Se não ficar satisfeita, entre em contato pelo WhatsApp e
+                            providenciaremos a solução. Compre com total confiança!</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-q">O produto é aprovado pela ANVISA?</div>
+                    <div class="faq-a">
+                        <p>Sim! A Progressiva Liso Mágico Premium Gold é registrada e aprovada pela ANVISA, seguindo
+                            todos os padrões de segurança e qualidade exigidos pela legislação brasileira. Você compra
+                            com total tranquilidade.</p>
+                    </div>
+                </div>
 
                 <div class="faq-item">
                     <div class="faq-q">Loiras podem usar a Progressiva Liso Mágico?</div>
@@ -1935,6 +2214,15 @@
                         <p>Sim! A fórmula 100% sem formol do Liso Mágico Premium Gold é segura e compatível com cabelos
                             loiros, tingidos e com qualquer tipo de química. Recomendamos fazer um teste de mecha antes
                             da aplicação completa.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-q">Quanto tempo dura o resultado?</div>
+                    <div class="faq-a">
+                        <p>O resultado do Liso Mágico Premium Gold dura em média <strong>2 a 3 meses</strong>,
+                            dependendo do tipo e histórico do seu cabelo, além dos cuidados pós-progressiva. Para
+                            resultados mais duradouros, recomendamos usar shampoo sem sal.</p>
                     </div>
                 </div>
 
@@ -1955,42 +2243,13 @@
                     </div>
                 </div>
 
-                <div class="faq-item">
-                    <div class="faq-q">Qual a garantia do produto?</div>
-                    <div class="faq-a">
-                        <p>Oferecemos <strong>garantia de satisfação de 7 dias</strong> após o recebimento, conforme o
-                            Código de Defesa do Consumidor. Se não ficar satisfeita, entre em contato pelo WhatsApp e
-                            providenciaremos a solução. Compre com total confiança!</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-q">Como funciona o Pagamento na Entrega?</div>
-                    <div class="faq-a">
-                        <p>É simples e seguro! Você faz o pedido online agora, e só paga quando o produto for entregue
-                            diretamente em suas mãos. Nosso entregador estará equipado com maquininha para cartão
-                            (débito/crédito em até 12x), dinheiro ou Pix. Zero risco para você!</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-q">Quanto tempo dura o resultado?</div>
-                    <div class="faq-a">
-                        <p>O resultado do Liso Mágico Premium Gold dura em média <strong>2 a 3 meses</strong>,
-                            dependendo do tipo e histórico do seu cabelo, além dos cuidados pós-progressiva. Para
-                            resultados mais duradouros, recomendamos usar shampoo sem sal.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-q">O produto é aprovado pela ANVISA?</div>
-                    <div class="faq-a">
-                        <p>Sim! A Progressiva Liso Mágico Premium Gold é registrada e aprovada pela ANVISA, seguindo
-                            todos os padrões de segurança e qualidade exigidos pela legislação brasileira. Você compra
-                            com total tranquilidade.</p>
-                    </div>
-                </div>
-
+            </div>
+            <!-- CTA após FAQ -->
+            <div style="text-align:center;margin-top:48px">
+                <p style="color:#6B5C3A;font-size:.95rem;margin-bottom:16px">Ainda tem dúvidas? Fale com nossa equipe no
+                    WhatsApp — respondemos em minutos!</p>
+                <a href="#kits" class="btn-primary" style="display:inline-block;width:auto">⚡ GARANTIR MEU KIT AGORA
+                    (Pague na Entrega)</a>
             </div>
         </div>
     </section>
@@ -2069,6 +2328,45 @@
             el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
             observer.observe(el);
         });
+
+        // ===== CONTADOR REGRESSIVO =====
+        (function () {
+            // Chave para persistir o tempo de expiração no localStorage
+            var STORAGE_KEY = 'lm_countdown_end';
+            var DURATION_MS = 48 * 60 * 60 * 1000; // 48 horas
+
+            var endTime = parseInt(localStorage.getItem(STORAGE_KEY));
+            if (!endTime || isNaN(endTime) || endTime < Date.now()) {
+                endTime = Date.now() + DURATION_MS;
+                localStorage.setItem(STORAGE_KEY, endTime);
+            }
+
+            var hoursEl = document.getElementById('cd-hours');
+            var minutesEl = document.getElementById('cd-minutes');
+            var secondsEl = document.getElementById('cd-seconds');
+
+            function pad(n) { return n < 10 ? '0' + n : String(n); }
+
+            function tick() {
+                var diff = Math.max(0, endTime - Date.now());
+                var totalSecs = Math.floor(diff / 1000);
+                var h = Math.floor(totalSecs / 3600);
+                var m = Math.floor((totalSecs % 3600) / 60);
+                var s = totalSecs % 60;
+                if (hoursEl) hoursEl.textContent = pad(h);
+                if (minutesEl) minutesEl.textContent = pad(m);
+                if (secondsEl) secondsEl.textContent = pad(s);
+                if (diff > 0) {
+                    setTimeout(tick, 1000);
+                } else {
+                    // Reinicia ao zerar (escassez contínua)
+                    endTime = Date.now() + DURATION_MS;
+                    localStorage.setItem(STORAGE_KEY, endTime);
+                    tick();
+                }
+            }
+            tick();
+        })();
         // ===== CARROSSEL PROVA SOCIAL =====
         (function () {
             const carousel = document.getElementById('psCarousel');
