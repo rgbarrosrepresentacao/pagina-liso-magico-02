@@ -1510,6 +1510,706 @@
                 max-height: 440px
             }
         }
+
+        /* ===== MECANISMO ÚNICO ===== */
+        .mechanism-section {
+            background: linear-gradient(135deg, #1A1208, #2D1E05);
+            padding: 80px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mechanism-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(ellipse at center, rgba(201, 168, 76, 0.06) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .mechanism-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .mechanism-text .section-title {
+            color: #fff;
+            text-align: left;
+        }
+
+        .mechanism-text .section-title span {
+            color: var(--gold-light);
+        }
+
+        .ingredient-list {
+            list-style: none;
+            padding: 0;
+            margin: 28px 0;
+        }
+
+        .ingredient-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 16px 0;
+            border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+        }
+
+        .ingredient-item:last-child {
+            border-bottom: none;
+        }
+
+        .ingredient-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            flex-shrink: 0;
+        }
+
+        .ingredient-info strong {
+            color: var(--gold-light);
+            display: block;
+            font-size: 1rem;
+            margin-bottom: 4px;
+        }
+
+        .ingredient-info p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: .88rem;
+            line-height: 1.6;
+        }
+
+        .mechanism-img-col {
+            position: relative;
+        }
+
+        .mechanism-main-img {
+            width: 100%;
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            border: 2px solid rgba(201, 168, 76, 0.3);
+            display: block;
+        }
+
+        .mechanism-badge {
+            position: absolute;
+            bottom: -16px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+            color: var(--dark);
+            font-weight: 800;
+            font-size: .85rem;
+            padding: 10px 24px;
+            border-radius: 100px;
+            white-space: nowrap;
+            box-shadow: 0 8px 24px rgba(201, 168, 76, 0.4);
+        }
+
+        .diferencial-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-top: 48px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .diferencial-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(201, 168, 76, 0.25);
+            border-radius: 16px;
+            padding: 20px;
+            text-align: center;
+            color: #fff;
+            transition: all .3s;
+        }
+
+        .diferencial-card:hover {
+            background: rgba(201, 168, 76, 0.1);
+            border-color: var(--gold);
+        }
+
+        .diferencial-card .icon {
+            font-size: 2rem;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .diferencial-card strong {
+            color: var(--gold-light);
+            display: block;
+            font-size: .9rem;
+            margin-bottom: 4px;
+        }
+
+        .diferencial-card p {
+            font-size: .8rem;
+            opacity: .7;
+            line-height: 1.5;
+        }
+
+        /* ===== MODO DE USO ===== */
+        .howto-section {
+            background: linear-gradient(135deg, #FFF9EE, #FAF8F5);
+            padding: 80px 20px;
+        }
+
+        .howto-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .howto-steps {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .howto-step {
+            display: flex;
+            gap: 20px;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+            align-items: flex-start;
+        }
+
+        .howto-step:last-child {
+            border-bottom: none;
+        }
+
+        .step-circle {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+            color: var(--dark);
+            font-weight: 900;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(201, 168, 76, 0.3);
+        }
+
+        .step-content strong {
+            color: var(--dark);
+            display: block;
+            font-size: 1rem;
+            margin-bottom: 4px;
+        }
+
+        .step-content p {
+            color: #6B5C3A;
+            font-size: .88rem;
+            line-height: 1.6;
+        }
+
+        .howto-video-col {}
+
+        .howto-video-wrap {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+            border: 2px solid rgba(201, 168, 76, 0.3);
+            background: #1A1208;
+            aspect-ratio: 9/16;
+            max-height: 560px;
+            position: relative;
+        }
+
+        .howto-video-wrap video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .howto-video-tag {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            background: rgba(201, 168, 76, 0.92);
+            color: #1A1208;
+            font-size: .72rem;
+            font-weight: 800;
+            padding: 5px 12px;
+            border-radius: 100px;
+            text-transform: uppercase;
+            letter-spacing: .5px;
+        }
+
+        .howto-tip {
+            margin-top: 20px;
+            background: linear-gradient(135deg, rgba(26, 122, 60, 0.1), rgba(37, 163, 82, 0.1));
+            border: 1px solid rgba(26, 122, 60, 0.3);
+            border-radius: 12px;
+            padding: 16px 20px;
+            color: #1A7A3C;
+            font-size: .9rem;
+            font-weight: 600;
+        }
+
+        /* ===== BEFORE AFTER GALLERY ===== */
+        .ba-gallery-section {
+            background: linear-gradient(135deg, #FAF8F5, #F5EDD8);
+            padding: 80px 20px;
+        }
+
+        .ba-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 1100px;
+            margin: 0 auto 40px;
+        }
+
+        .ba-gallery-grid .ba-gallery-card:nth-child(4) {
+            grid-column: 1 / 2;
+            justify-self: end;
+        }
+
+        .ba-gallery-grid .ba-gallery-card:nth-child(5) {
+            grid-column: 2 / 3;
+            justify-self: start;
+        }
+
+        .ba-gallery-card {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+            position: relative;
+            transition: transform .3s;
+        }
+
+        .ba-gallery-card:hover {
+            transform: translateY(-6px);
+        }
+
+        .ba-gallery-card img {
+            width: 100%;
+            height: 340px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .ba-gallery-label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.82));
+            color: #fff;
+            padding: 30px 16px 16px;
+            font-weight: 600;
+            font-size: .9rem;
+        }
+
+        .ba-gallery-label span {
+            display: block;
+            font-size: .75rem;
+            opacity: .8;
+            font-weight: 400;
+            margin-top: 2px;
+        }
+
+        .ba-counter {
+            text-align: center;
+            background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+            color: var(--dark);
+            font-weight: 800;
+            font-size: 1.05rem;
+            padding: 16px 32px;
+            border-radius: 50px;
+            display: inline-block;
+            margin: 0 auto;
+            box-shadow: 0 8px 24px rgba(201, 168, 76, 0.35);
+        }
+
+
+        /* ========================================
+           MOBILE OPTIMIZATION - 768px e abaixo
+        ======================================== */
+        @media(max-width:768px) {
+
+            /* Novas seções */
+            .mechanism-inner {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .mechanism-section {
+                padding: 48px 16px;
+            }
+
+            .mechanism-text .section-title {
+                text-align: center;
+                font-size: 1.5rem;
+            }
+
+            .diferencial-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+                padding: 0 4px;
+            }
+
+            .diferencial-card {
+                padding: 14px 10px;
+            }
+
+            .diferencial-card .icon {
+                font-size: 1.5rem;
+            }
+
+            /* Modo de Uso: vídeo PRIMEIRO no mobile */
+            .howto-inner {
+                grid-template-columns: 1fr;
+                gap: 24px;
+                grid-template-rows: auto;
+            }
+
+            .howto-inner>div:first-child {
+                order: 2;
+            }
+
+            .howto-video-col {
+                order: 1;
+            }
+
+            .howto-section {
+                padding: 48px 16px;
+            }
+
+            .howto-video-wrap {
+                max-height: 380px;
+            }
+
+            .howto-step {
+                gap: 12px;
+                padding: 14px 0;
+            }
+
+            .step-circle {
+                width: 38px;
+                height: 38px;
+                font-size: 1rem;
+                flex-shrink: 0;
+            }
+
+            /* Galeria */
+            .ba-gallery-section {
+                padding: 48px 16px;
+            }
+
+            .ba-gallery-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+            }
+
+            .ba-gallery-grid .ba-gallery-card:nth-child(4) {
+                grid-column: auto;
+                justify-self: auto;
+            }
+
+            .ba-gallery-grid .ba-gallery-card:nth-child(5) {
+                grid-column: auto;
+                justify-self: auto;
+            }
+
+            .ba-gallery-card img {
+                height: 200px;
+            }
+
+            .ba-counter {
+                font-size: .88rem;
+                padding: 12px 20px;
+            }
+
+            /* Seções gerais */
+            section {
+                padding: 48px 16px;
+            }
+
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+
+            .benefit-card {
+                padding: 20px 14px;
+            }
+
+            .benefit-card img {
+                width: 60px;
+                height: 60px;
+            }
+
+            .problem-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .kits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .kit-card.featured {
+                transform: none;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cod-steps {
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+            }
+
+            .payment-icons {
+                gap: 10px;
+            }
+
+            .pay-icon {
+                min-width: 70px;
+                padding: 12px 10px;
+                font-size: .72rem;
+            }
+
+            .pay-icon img {
+                width: 38px;
+                height: 38px;
+            }
+
+            .anvisa-box {
+                flex-direction: column;
+                text-align: center;
+                padding: 20px;
+            }
+
+            .anvisa-text {
+                text-align: center;
+            }
+
+            .btn-whatsapp {
+                padding: 16px 22px;
+                font-size: .95rem;
+                width: 100%;
+                justify-content: center;
+            }
+
+            .guarantee-box {
+                flex-direction: column;
+                text-align: center;
+                padding: 20px;
+                width: 100%;
+            }
+
+            .section-title {
+                font-size: 1.6rem;
+            }
+
+            .section-sub {
+                font-size: .95rem;
+            }
+
+            .top-bar {
+                font-size: .78rem;
+                padding: 8px 12px;
+            }
+
+            /* Hero */
+            .hero-inner {
+                grid-template-columns: 1fr;
+                gap: 0;
+                text-align: center;
+            }
+
+            .hero {
+                padding: 70px 16px 48px;
+            }
+
+            .hero-img {
+                order: -1;
+                margin-bottom: 12px;
+            }
+
+            .hero-img img {
+                border-radius: 16px;
+                max-height: 300px;
+                object-fit: cover;
+                object-position: top;
+            }
+
+            .hero h1 {
+                font-size: 1.7rem;
+            }
+
+            .hero p {
+                font-size: .95rem;
+            }
+
+            .cod-badge {
+                text-align: left;
+            }
+
+            .btn-primary {
+                font-size: .95rem;
+                padding: 16px 20px;
+            }
+
+            .hero-bullets {
+                text-align: left;
+            }
+
+            .hero-urgency {
+                font-size: .78rem;
+            }
+
+            .hero-badge {
+                font-size: .72rem;
+            }
+
+            /* Carrossel prova social */
+            .ps-carousel-wrapper {
+                max-width: 100%;
+                margin-left: 0;
+                margin-right: 0;
+                padding: 0 36px;
+            }
+        }
+
+        /* ========================================
+           MOBILE PEQUENO - 480px e abaixo
+        ======================================== */
+        @media(max-width:480px) {
+            section {
+                padding: 40px 14px;
+            }
+
+            .mechanism-section {
+                padding: 40px 14px;
+            }
+
+            .howto-section {
+                padding: 40px 14px;
+            }
+
+            .ba-gallery-section {
+                padding: 40px 14px;
+            }
+
+            /* Galeria: 1 coluna no mobile pequeno */
+            .ba-gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .ba-gallery-card img {
+                height: 260px;
+            }
+
+            .ba-gallery-grid .ba-gallery-card:nth-child(4) {
+                grid-column: auto;
+            }
+
+            .ba-gallery-grid .ba-gallery-card:nth-child(5) {
+                grid-column: auto;
+            }
+
+            .diferencial-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cod-steps {
+                grid-template-columns: 1fr;
+            }
+
+            /* Hero */
+            .hero h1 {
+                font-size: 1.45rem;
+                line-height: 1.25;
+            }
+
+            .hero-img img {
+                max-height: 240px;
+            }
+
+            /* Kits */
+            .kit-price {
+                font-size: 1.7rem;
+            }
+
+            .kit-img {
+                height: 180px;
+            }
+
+            /* Countdown */
+            .countdown-block {
+                min-width: 58px;
+                padding: 10px 12px;
+            }
+
+            .countdown-num {
+                font-size: 1.8rem;
+            }
+
+            /* Seção title */
+            .section-title {
+                font-size: 1.4rem;
+            }
+
+            /* Botões */
+            .btn-primary {
+                font-size: .88rem;
+                padding: 14px 16px;
+            }
+
+            /* Carrossel */
+            .ps-carousel-wrapper {
+                padding: 0 30px;
+            }
+
+            .ps-nav {
+                width: 32px;
+                height: 32px;
+                font-size: 1.2rem;
+            }
+
+            .ps-prev {
+                left: -4px;
+            }
+
+            .ps-next {
+                right: -4px;
+            }
+
+            .ps-media-box {
+                max-height: 400px;
+            }
+        }
     </style>
 </head>
 
@@ -1557,8 +2257,7 @@
                 <a href="#kits" class="btn-primary">⚡ QUERO MEU CABELO LISO E PERFEITO AGORA! (Pague na Entrega) ⚡</a>
             </div>
             <div class="hero-img">
-                <img src="imagem/Imagem Principal da Seção Hero.png.jpeg"
-                    alt="Liso Mágico Premium Gold - Resultado profissional em casa">
+                <img src="imagem/novo 01.png.png" alt="Liso Mágico Premium Gold - Resultado profissional em casa">
             </div>
         </div>
     </section>
@@ -1639,6 +2338,222 @@
                     <p>Seguro e versátil para todos os tipos de cabelo e histórico de tratamentos. <strong>Para todas as
                             mulheres!</strong></p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MECANISMO ÚNICO -->
+    <section class="mechanism-section">
+        <div class="mechanism-inner">
+            <div class="mechanism-text">
+                <h2 class="section-title">O Segredo do Liso Mágico: <span>Tecnologia Exclusiva que Alisa e Trata!</span>
+                </h2>
+                <p style="color:rgba(255,255,255,0.75);line-height:1.7;margin-top:12px">Nossa fórmula revolucionária age
+                    diretamente na fibra capilar, realinhando os fios e selando as cutículas — proporcionando um liso
+                    perfeito e natural, sem agredir a saúde do seu cabelo. É a ciência da beleza a seu favor!</p>
+                <ul class="ingredient-list">
+                    <li class="ingredient-item">
+                        <div class="ingredient-icon">🌿</div>
+                        <div class="ingredient-info">
+                            <strong>Ácido Lático</strong>
+                            <p>Realinha a fibra capilar de dentro para fora, selando as cutículas e proporcionando liso
+                                perfeito e duradouro sem danificar o fio.</p>
+                        </div>
+                    </li>
+                    <li class="ingredient-item">
+                        <div class="ingredient-icon">🥥</div>
+                        <div class="ingredient-info">
+                            <strong>Óleo de Coco</strong>
+                            <p>Penetra profundamente no córtex capilar, nutrindo, hidratando e devolvendo brilho intenso
+                                e sedosidade incomparável aos fios.</p>
+                        </div>
+                    </li>
+                    <li class="ingredient-item">
+                        <div class="ingredient-icon">💧</div>
+                        <div class="ingredient-info">
+                            <strong>Pantenol (Pró-Vitamina B5)</strong>
+                            <p>Reconstrói, fortalece e protege a fibra capilar durante o processo, garantindo fios
+                                saudáveis, elásticos e com movimento natural.</p>
+                        </div>
+                    </li>
+                    <li class="ingredient-item">
+                        <div class="ingredient-icon">🛡️</div>
+                        <div class="ingredient-info">
+                            <strong>100% Livre de Formol</strong>
+                            <p>Sem cheiro forte, sem ardência, sem risco à saúde. Uma fórmula segura que entrega
+                                resultado profissional de forma responsável.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="mechanism-img-col">
+                <img src="imagem/novo 03.png.png" alt="Liso Mágico - Tecnologia e fórmula exclusiva"
+                    class="mechanism-main-img">
+                <div class="mechanism-badge">✨ Ciência + Natureza = Liso Perfeito</div>
+            </div>
+        </div>
+        <div class="diferencial-grid container" style="max-width:1100px;margin-top:60px">
+            <div class="diferencial-card">
+                <span class="icon">🚫</span>
+                <strong>Sem Cheiro Forte</strong>
+                <p>Diferente das progressivas tradicionais, pode aplicar em qualquer ambiente sem incomodar.</p>
+            </div>
+            <div class="diferencial-card">
+                <span class="icon">👁️</span>
+                <strong>Sem Irritação</strong>
+                <p>Não arde os olhos, não irrita a pele do couro cabeludo. Segura para uso doméstico.</p>
+            </div>
+            <div class="diferencial-card">
+                <span class="icon">⚡</span>
+                <strong>Aplicação Simples</strong>
+                <p>Passo a passo fácil, sem precisar de chapinha. Só secador e escova para ativar o resultado.</p>
+            </div>
+            <div class="diferencial-card">
+                <span class="icon">🏆</span>
+                <strong>Aprovada ANVISA</strong>
+                <p>Registrada e certificada pela agência regulatória brasileira. Segurança comprovada.</p>
+            </div>
+            <div class="diferencial-card">
+                <span class="icon">💛</span>
+                <strong>Para Loiras</strong>
+                <p>Compatível com cabelos loiros, tingidos e com qualquer tipo de química anterior.</p>
+            </div>
+            <div class="diferencial-card">
+                <span class="icon">⏳</span>
+                <strong>Dura 3 Meses</strong>
+                <p>Resultado duradouro que vale muito mais do que gastar no salão a cada semana.</p>
+            </div>
+        </div>
+        <div style="text-align:center;margin-top:48px">
+            <a href="#kits" class="btn-primary" style="display:inline-block;width:auto">⚡ QUERO EXPERENCIAR ESSE
+                RESULTADO!</a>
+        </div>
+    </section>
+
+    <!-- MODO DE USO -->
+    <section class="howto-section">
+        <div style="text-align:center;max-width:760px;margin:0 auto 48px">
+            <h2 class="section-title">Como Usar e Ter um Liso Perfeito em Casa <span>(Passo a Passo Simples!)</span>
+            </h2>
+            <p class="section-sub" style="margin-bottom:0">Qualquer mulher consegue fazer! Sem experiência, sem chapinha
+                — só o secador com escova. Assista ao vídeo ao lado!</p>
+        </div>
+        <div class="howto-inner">
+            <div>
+                <ol class="howto-steps">
+                    <li class="howto-step">
+                        <div class="step-circle">1</div>
+                        <div class="step-content">
+                            <strong>🚿 Lave Bem o Cabelo</strong>
+                            <p>Lave 2 vezes com shampoo de limpeza profunda para abrir as cutículas e remover resíduos.
+                                O cabelo limpo absorve melhor o produto.</p>
+                        </div>
+                    </li>
+                    <li class="howto-step">
+                        <div class="step-circle">2</div>
+                        <div class="step-content">
+                            <strong>💨 Seque 100% com Secador</strong>
+                            <p>Seque completamente os fios. O cabelo deve estar totalmente seco antes da aplicação para
+                                o produto agir corretamente.</p>
+                        </div>
+                    </li>
+                    <li class="howto-step">
+                        <div class="step-circle">3</div>
+                        <div class="step-content">
+                            <strong>🧴 Aplique o Produto</strong>
+                            <p>Divida em mechas finas e aplique o Liso Mágico da raiz às pontas, espalhando
+                                uniformemente. Use luvas para proteção.</p>
+                        </div>
+                    </li>
+                    <li class="howto-step">
+                        <div class="step-circle">4</div>
+                        <div class="step-content">
+                            <strong>⏰ Aguarde 40 Minutos</strong>
+                            <p>Deixe o produto agir por exatamente 40 minutos. Não exceda o tempo recomendado para
+                                melhores resultados.</p>
+                        </div>
+                    </li>
+                    <li class="howto-step">
+                        <div class="step-circle">5</div>
+                        <div class="step-content">
+                            <strong>🚰 Enxágue Apenas com Água</strong>
+                            <p>Enxágue somente com água para retirar o excesso. Não use shampoo neste momento — apenas
+                                água.</p>
+                        </div>
+                    </li>
+                    <li class="howto-step">
+                        <div class="step-circle">6</div>
+                        <div class="step-content">
+                            <strong>🪄 Seque e Ative o Liso</strong>
+                            <p>Seque 100% com secador, alinhando com uma escova. O calor ativa o produto e revela o liso
+                                perfeito. <strong>Não precisa de chapinha!</strong></p>
+                        </div>
+                    </li>
+                </ol>
+                <div class="howto-tip">💡 <strong>Dica de Ouro:</strong> Use shampoo sem sal após a progressiva para
+                    manter o liso por mais tempo e aproveitar ao máximo os 3 meses de resultado!</div>
+                <div style="text-align:center;margin-top:28px">
+                    <a href="#kits" class="btn-primary" style="display:inline-block;width:auto">⚡ GARANTIR MEU KIT
+                        AGORA!</a>
+                </div>
+            </div>
+            <div class="howto-video-col">
+                <div class="howto-video-wrap">
+                    <video controls playsinline preload="none">
+                        <source src="video/modo de uso.mp4.mp4" type="video/mp4">
+                    </video>
+                    <div class="howto-video-tag">🎬 Tutorial Completo</div>
+                </div>
+                <p style="text-align:center;color:#9B8055;font-size:.85rem;margin-top:12px;font-style:italic">Assista ao
+                    tutorial completo de aplicação</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERIA ANTES E DEPOIS -->
+    <section class="ba-gallery-section">
+        <div style="text-align:center;max-width:760px;margin:0 auto 48px">
+            <h2 class="section-title">Transformações Reais: <span>Antes e Depois Incrível!</span></h2>
+            <p class="section-sub" style="margin-bottom:0">Fotos enviadas por clientes reais — sem filtro, sem edição.
+                Resultados que falam por si!</p>
+        </div>
+        <div class="ba-gallery-grid">
+            <div class="ba-gallery-card">
+                <img src="imagem/prova social-01.png.jpg" alt="Cliente Real - Resultado Liso Mágico 1" loading="lazy">
+                <div class="ba-gallery-label">📸 Cliente Real
+                    <span>Resultado enviado pela nossa cliente</span>
+                </div>
+            </div>
+            <div class="ba-gallery-card">
+                <img src="imagem/prova social-02.png.jpg" alt="Cliente Real - Resultado Liso Mágico 2" loading="lazy">
+                <div class="ba-gallery-label">📸 Cliente Real
+                    <span>Liso perfeito feito em casa!</span>
+                </div>
+            </div>
+            <div class="ba-gallery-card">
+                <img src="imagem/prova social-03.png.jpg" alt="Cliente Real - Resultado Liso Mágico 3" loading="lazy">
+                <div class="ba-gallery-label">📸 Cliente Real
+                    <span>Fios lisos e sem frizz!</span>
+                </div>
+            </div>
+            <div class="ba-gallery-card">
+                <img src="imagem/prova social-04.png.jpg" alt="Cliente Real - Resultado Liso Mágico 4" loading="lazy">
+                <div class="ba-gallery-label">📸 Cliente Real
+                    <span>Brilho e sedosidade incríveis!</span>
+                </div>
+            </div>
+            <div class="ba-gallery-card">
+                <img src="imagem/prova social-05.png.jpg" alt="Cliente Real - Resultado Liso Mágico 5" loading="lazy">
+                <div class="ba-gallery-label">📸 Cliente Real
+                    <span>100% satisfeita com o resultado!</span>
+                </div>
+            </div>
+        </div>
+        <div style="text-align:center">
+            <div class="ba-counter">🏆 Mais de 5.000 Mulheres Já Transformadas — Seja a Próxima!</div>
+            <div style="margin-top:28px">
+                <a href="#kits" class="btn-primary" style="display:inline-block;width:auto">🌟 QUERO TRANSFORMAR MEU
+                    CABELO AGORA!</a>
             </div>
         </div>
     </section>
@@ -2193,7 +3108,7 @@
                 <div class="faq-item">
                     <div class="faq-q">Qual a garantia do produto?</div>
                     <div class="faq-a">
-                        <p>Oferecemos <strong>garantia de satisfação de 7 dias</strong> após o recebimento, conforme o
+                        <p>Oferecemos <strong>garantia de satisfação de 30 dias</strong> após o recebimento, conforme o
                             Código de Defesa do Consumidor. Se não ficar satisfeita, entre em contato pelo WhatsApp e
                             providenciaremos a solução. Compre com total confiança!</p>
                     </div>
@@ -2243,6 +3158,50 @@
                     </div>
                 </div>
 
+                <div class="faq-item">
+                    <div class="faq-q">O Liso Mágico tem formol? ❌</div>
+                    <div class="faq-a">
+                        <p><strong>NÃO! Absolutamente não!</strong> A Progressiva Liso Mágico Premium Gold é 100% livre
+                            de formol (formaldeído). Nossa fórmula exclusiva com Ácido Lático, Óleo de Coco e Pantenol
+                            entrega resultado profissional sem nenhum componente nocivo. Sem cheiro forte, sem ardência,
+                            sem risco à saúde. Pode usar com total tranquilidade!</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-q">Qual a composição do produto?</div>
+                    <div class="faq-a">
+                        <p>Os principais ativos do Liso Mágico Premium Gold são: <strong>Ácido Lático</strong> (realinha
+                            a fibra capilar), <strong>Óleo de Coco</strong> (nutre e hidrata profundamente),
+                            <strong>Pantenol - Pró-Vitamina B5</strong> (fortalece e reconstrói os fios), além de
+                            agentes condicionantes e conservantes aprovados pela ANVISA. 100% sem formol, sem sulfatos
+                            agressivos.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-q">Qual a diferença entre o Liso Mágico e outras progressivas?</div>
+                    <div class="faq-a">
+                        <p>O Liso Mágico é único porque: ✅ <strong>Não tem formol</strong> (seguro e sem cheiro); ✅
+                            <strong>Não arde os olhos</strong> nem a pele; ✅ <strong>Não precisa de chapinha</strong> —
+                            o secador já ativa o liso; ✅ <strong>Trata enquanto alisa</strong> — seus fios ficam mais
+                            saudáveis; ✅ <strong>Compatível com loiras e químicas</strong>; ✅ <strong>Aprovado pela
+                                ANVISA</strong>. É a progressiva mais segura, prática e eficaz do mercado!
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-q">Em quanto tempo o produto é entregue?</div>
+                    <div class="faq-a">
+                        <p>O prazo de entrega varia conforme sua região: capitais e regiões metropolitanas geralmente
+                            recebem em <strong>2 a 5 dias úteis</strong>. Interior e demais regiões entre <strong>5 a 12
+                                dias úteis</strong>. Você receberá o código de rastreamento por WhatsApp para acompanhar
+                            sua entrega em tempo real!</p>
+                    </div>
+                </div>
+
             </div>
             <!-- CTA após FAQ -->
             <div style="text-align:center;margin-top:48px">
@@ -2271,8 +3230,8 @@
             <div class="guarantee-box">
                 <span>🛡️</span>
                 <div class="guarantee-text">
-                    <strong>Garantia de Satisfação 7 Dias</strong>
-                    <p>Se não ficar satisfeita, devolvemos seu dinheiro. Simples assim.</p>
+                    <strong>Garantia Incondicional de 30 Dias</strong>
+                    <p>Se não amar o resultado, devolvemos 100% do seu dinheiro. Sem perguntas, sem burocracia!</p>
                 </div>
             </div>
         </div>
