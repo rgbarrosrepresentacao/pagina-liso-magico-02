@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descubra se o Liso Mais é para você</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary: #C9A84C;
+            /* Soft Gold matching the main page */
+            --primary-dark: #A07830;
+            --bg-color: #FAF8F5;
+            /* Pearl/Soft Pinkish White */
+            --text-main: #3D2C0A;
+            --text-light: #6B5C3A;
+            --white: #FFFFFF;
+            --accent: #E8C3BA;
+            /* Rose gold/soft pink accent */
+            --green: #1A7A3C;
+            /* Green */
+            --whatsapp: #25D366;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            background: var(--white);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+        }
+
+        .step {
+            display: none;
+            padding: 40px 25px;
+            flex-grow: 1;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .step.active {
+            display: flex;
+            flex-direction: column;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h2 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            text-align: center;
+            color: var(--text-main);
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        p.subtitle {
+            text-align: center;
+            color: var(--text-light);
+            margin-bottom: 25px;
+            font-size: 1.05rem;
+            line-height: 1.5;
+        }
+
+        .benefits-list {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .benefits-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .benefits-list li::before {
+            content: '✨';
+        }
+
+        .btn {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: var(--white);
+            border: none;
+            padding: 18px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            width: 100%;
+            text-transform: uppercase;
+            box-shadow: 0 4px 15px rgba(201, 168, 76, 0.4);
+            transition: all 0.3s ease;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: auto;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(201, 168, 76, 0.6);
+        }
+
+        .option-btn {
+            background: var(--white);
+            border: 2px solid #eaeaea;
+            padding: 20px;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-main);
+            cursor: pointer;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .option-btn:hover,
+        .option-btn:active {
+            border-color: var(--primary);
+            background: rgba(201, 168, 76, 0.05);
+        }
+
+        .loading-screen {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            text-align: center;
+        }
+
+        .spinner {
+            width: 60px;
+            height: 60px;
+            border: 5px solid #f0f0f0;
+            border-top: 5px solid var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 25px;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .progress-bar-container {
+            width: 100%;
+            height: 6px;
+            background: #f0f0f0;
+            display: none;
+            /* starts hidden */
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--primary);
+            width: 0%;
+            transition: width 0.4s ease;
+        }
+
+        /* Result Page Styles */
+        .result-box {
+            background: rgba(201, 168, 76, 0.1);
+            border: 2px solid var(--primary);
+            border-radius: 15px;
+            padding: 25px 20px;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .highlight-badge {
+            background: var(--text-main);
+            color: var(--primary);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .cod-highlight {
+            background: rgba(26, 122, 60, 0.1);
+            color: var(--green);
+            padding: 20px 15px;
+            border-radius: 12px;
+            text-align: center;
+            font-weight: 700;
+            margin: 25px 0;
+            border: 2px dashed #4ADE80;
+            font-size: 1.05rem;
+        }
+
+        .testimonials {
+            margin: 35px 0;
+        }
+
+        .testimonial-card {
+            background: #fdfbf7;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            border-left: 4px solid var(--primary);
+            font-style: italic;
+            font-size: 0.95rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+            line-height: 1.6;
+        }
+
+        .stars {
+            color: var(--primary);
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .btn-whatsapp {
+            background: var(--whatsapp);
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-whatsapp:hover {
+            background: #20BA56;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+        }
+
+        .top-wave {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background: linear-gradient(135deg, var(--bg-color), #f7efe1);
+            border-bottom-left-radius: 50% 20px;
+            border-bottom-right-radius: 50% 20px;
+            z-index: 0;
+        }
+
+        .step-content {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="progress-bar-container" id="progressBar">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+
+        <!-- Página 1 - Tela Inicial -->
+        <div id="step-1" class="step active">
+            <div class="top-wave"></div>
+            <div class="step-content">
+                <div style="text-align: center; margin-bottom: 20px;">
+                    <span
+                        style="display: inline-block; background: var(--primary); color: white; padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase;">Teste
+                        Rápido</span>
+                </div>
+
+                <h2 style="font-size: 1.8rem;">Descubra em 30 segundos se o Liso Mais é ideal para seu cabelo</h2>
+                <p class="subtitle">Faça o teste rápido e veja se seu cabelo pode ficar mais liso, sem frizz e com menos
+                    volume.</p>
+
+                <ul class="benefits-list" style="margin-top: 10px;">
+                    <li>Reduz volume</li>
+                    <li>Diminui frizz</li>
+                    <li>Dá brilho espelhado</li>
+                    <li>Resultado de salão em casa</li>
+                </ul>
+
+                <button class="btn" onclick="nextStep(2)">Começar o teste</button>
+            </div>
+        </div>
+
+        <!-- Página 2 - Pergunta 1 -->
+        <div id="step-2" class="step">
+            <div class="step-content">
+                <h2>Qual é o seu tipo de cabelo?</h2>
+                <div class="options-group" style="margin-top: 30px;">
+                    <button class="option-btn" onclick="nextStep(3)">Liso <span>›</span></button>
+                    <button class="option-btn" onclick="nextStep(3)">Ondulado <span>›</span></button>
+                    <button class="option-btn" onclick="nextStep(3)">Cacheado <span>›</span></button>
+                    <button class="option-btn" onclick="nextStep(3)">Crespo <span>›</span></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Página 3 - Pergunta 2 -->
+        <div id="step-3" class="step">
+            <div class="step-content">
+                <h2>Seu cabelo tem muito volume?</h2>
+                <div class="options-group" style="margin-top: 30px;">
+                    <button class="option-btn" onclick="nextStep(4)">Muito volume <span>›</span></button>
+                    <button class="option-btn" onclick="nextStep(4)">Volume médio <span>›</span></button>
+                    <button class="option-btn" onclick="nextStep(4)">Pouco volume <span>›</span></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Página 4 - Pergunta 3 -->
+        <div id="step-4" class="step">
+            <div class="step-content">
+                <h2>Você sofre com frizz?</h2>
+                <div class="options-group" style="margin-top: 30px;">
+                    <button class="option-btn" onclick="nextStep(5)">Muito frizz <span>›</span></button>
+                    <button class="option-btn" onclick="nextStep(5)">Um pouco de frizz <span>›</span></button>
+                    <button class="option-btn" onclick="nextStep(5)">Quase nada <span>›</span></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Página 5 - Pergunta 4 -->
+        <div id="step-5" class="step">
+            <div class="step-content">
+                <h2>Seu cabelo já tem química?</h2>
+                <div class="options-group" style="margin-top: 30px;">
+                    <button class="option-btn" onclick="nextStep(6)">Sim <span>›</span></button>
+                    <button class="option-btn" onclick="nextStep(6)">Não <span>›</span></button>
+                    <button class="option-btn" onclick="nextStep(6)">Já teve no passado <span>›</span></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Página 6 - Pergunta 5 -->
+        <div id="step-6" class="step">
+            <div class="step-content">
+                <h2>Qual resultado você quer para o seu cabelo?</h2>
+                <div class="options-group" style="margin-top: 30px;">
+                    <button class="option-btn" onclick="startAnalysis()">Mais liso <span>›</span></button>
+                    <button class="option-btn" onclick="startAnalysis()">Reduzir volume <span>›</span></button>
+                    <button class="option-btn" onclick="startAnalysis()">Tirar frizz <span>›</span></button>
+                    <button class="option-btn" onclick="startAnalysis()">Mais brilho <span>›</span></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Página 7 - Tela de Análise -->
+        <div id="step-loading" class="step">
+            <div class="loading-screen">
+                <div class="spinner"></div>
+                <h2 id="loading-text" style="color: var(--primary-dark);">Analisando suas respostas...</h2>
+                <p class="subtitle" style="margin-top: 20px;">Estamos verificando se o Liso Mais é ideal para seu tipo
+                    de cabelo.<br><br>Isso leva apenas alguns segundos.</p>
+            </div>
+        </div>
+
+        <!-- Página 8 - Resultado do Quiz -->
+        <div id="step-result" class="step">
+            <div class="step-content">
+                <h2 style="color: var(--primary-dark);">Resultado do seu teste</h2>
+
+                <div class="result-box">
+                    <p style="font-weight: 600; font-size: 1.1rem; line-height: 1.6; color: var(--text-main);">Pelas
+                        suas respostas, seu cabelo tem <strong
+                            style="color: var(--primary-dark); font-size: 1.2rem;">grande chance</strong> de ficar mais
+                        alinhado usando o Liso Mais.</p>
+                </div>
+
+                <p class="subtitle"
+                    style="text-align: left; margin-bottom: 5px; font-weight: 700; color: var(--text-main);">Esse
+                    tratamento capilar ajuda a:</p>
+                <ul class="benefits-list" style="margin-bottom: 25px;">
+                    <li>Reduzir volume</li>
+                    <li>Eliminar frizz</li>
+                    <li>Deixar os fios mais lisos e brilhosos</li>
+                </ul>
+
+                <div
+                    style="background: #fff; border: 1px solid #eaeaea; border-radius: 15px; padding: 25px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.03);">
+                    <div class="highlight-badge">Tratamento Liso Mais</div>
+                    <ul class="benefits-list" style="text-align: left; margin-bottom: 0;">
+                        <li>Sem formol</li>
+                        <li>Compatível com química</li>
+                        <li>Não arde os olhos</li>
+                        <li>Não tem cheiro forte</li>
+                        <li>Resultado de salão em casa</li>
+                    </ul>
+                </div>
+
+                <div class="cod-highlight">
+                    📦 PAGAMENTO SOMENTE NA ENTREGA<br>
+                    <span
+                        style="font-size: 0.9rem; font-weight: 500; display: block; margin-top: 8px; color: var(--text-main);">Você
+                        faz o pedido agora e só paga quando o produto chegar na sua casa.</span>
+                </div>
+
+                <div class="testimonials">
+                    <h3
+                        style="text-align: center; font-size: 1.15rem; margin-bottom: 20px; color: var(--text-main); font-weight: 700;">
+                        Mais de 5.000 mulheres já usam Liso Mais</h3>
+
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        "Meu cabelo tinha muito frizz e volume, depois do Liso Mais ficou muito mais alinhado."
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        "Produto maravilhoso, deixou meu cabelo brilhoso e macio."
+                    </div>
+                </div>
+
+                <div style="margin-top: 10px; display: flex; flex-direction: column; gap: 15px; margin-bottom: 20px;">
+                    <!-- Direciona para a página de vendas principal (assumindo que seja lisomagico.shop ou a página raiz) -->
+                    <!-- Como este quiz vai ficar num subdomínio, redirecionamos para o domínio principal da oferta -->
+                    <a href="https://lisomagico.shop/" class="btn">Ver oferta especial</a>
+
+                    <!-- Link do WhatsApp configurado conforme a mensagem padrão e o número que adicionamos há pouco -->
+                    <a href="https://wa.me/5598981051322?text=Oi%20linda!%20Vi%20que%20voc%C3%AA%20acabou%20de%20fazer%20o%20teste%20do%20cabelo%20do%20Liso%20Mais.%20Pelas%20suas%20respostas%20ele%20pode%20ajudar%20bastante%20no%20seu%20tipo%20de%20cabelo.%20Quer%20que%20eu%20te%20explique%20como%20funciona%20o%20pedido%20com%20pagamento%20na%20entrega%3F"
+                        class="btn btn-whatsapp" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white">
+                            <path
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                        </svg>
+                        Falar com especialista
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const totalQuestions = 5;
+        const progressBarContainer = document.getElementById('progressBar');
+        const progressFill = document.getElementById('progressFill');
+
+        function nextStep(stepNumber) {
+            // Ocultar todos os passos
+            document.querySelectorAll('.step').forEach(step => {
+                step.classList.remove('active');
+            });
+
+            // Mostrar a barra de progresso a partir da primeira pergunta (step 2)
+            if (stepNumber > 1 && stepNumber <= 6) {
+                progressBarContainer.style.display = 'block';
+                // Calculamos o progresso baseado na pergunta atual
+                const progress = ((stepNumber - 1) / totalQuestions) * 100;
+                progressFill.style.width = progress + '%';
+            } else {
+                progressBarContainer.style.display = 'none';
+            }
+
+            // Mostrar o próximo passo
+            const targetStep = document.getElementById('step-' + stepNumber);
+            if (targetStep) targetStep.classList.add('active');
+            window.scrollTo(0, 0);
+        }
+
+        function startAnalysis() {
+            // Ocultar todos
+            document.querySelectorAll('.step').forEach(step => {
+                step.classList.remove('active');
+            });
+
+            // Esconder barra de progresso e mostrar tela de "loading"
+            progressBarContainer.style.display = 'none';
+
+            const loadingStep = document.getElementById('step-loading');
+            loadingStep.classList.add('active');
+
+            // Simular progresso do "processamento"
+            setTimeout(() => {
+                document.getElementById('loading-text').innerText = "Analisando perfil capilar...";
+            }, 1200);
+
+            setTimeout(() => {
+                document.getElementById('loading-text').innerText = "Gerando resultados...";
+            }, 2200);
+
+            setTimeout(() => {
+                loadingStep.classList.remove('active');
+                document.getElementById('step-result').classList.add('active');
+                window.scrollTo(0, 0);
+            }, 3500);
+        }
+    </script>
+
+</body>
+
+</html>
