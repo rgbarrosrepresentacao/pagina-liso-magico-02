@@ -4,24 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Descubra se o Liso Mais é para você</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+    <title>Descubra se o Liso Mágico é para você</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
         rel="stylesheet">
     <style>
         :root {
-            --primary: #C9A84C;
-            /* Soft Gold matching the main page */
-            --primary-dark: #A07830;
-            --bg-color: #FAF8F5;
-            /* Pearl/Soft Pinkish White */
-            --text-main: #3D2C0A;
-            --text-light: #6B5C3A;
+            --primary: #D4AF37;
+            /* Dourado luxuoso */
+            --primary-dark: #AF8B2C;
+            --secondary: #E9AAA9;
+            /* Rosa suave/Feminino */
+            --bg-color: #FDF9F9;
+            /* Fundo levemente rosado/quente */
+            --text-main: #3D2930;
+            /* Tom escuro levemente quente */
+            --text-light: #7A696E;
             --white: #FFFFFF;
-            --accent: #E8C3BA;
-            /* Rose gold/soft pink accent */
-            --green: #1A7A3C;
-            /* Green */
-            --whatsapp: #25D366;
+            --green: #25D366;
         }
 
         * {
@@ -49,7 +49,8 @@
             flex-direction: column;
             position: relative;
             background: var(--white);
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 0 25px rgba(233, 170, 169, 0.15);
+            /* Sombra feminina rosa */
             overflow: hidden;
         }
 
@@ -57,7 +58,7 @@
             display: none;
             padding: 40px 25px;
             flex-grow: 1;
-            animation: fadeIn 0.4s ease;
+            animation: fadeIn 0.5s ease-out;
         }
 
         .step.active {
@@ -68,7 +69,7 @@
         @keyframes fadeIn {
             from {
                 opacity: 0;
-                transform: translateY(10px);
+                transform: translateY(15px);
             }
 
             to {
@@ -78,12 +79,14 @@
         }
 
         h2 {
-            font-size: 1.6rem;
+            font-family: 'Playfair Display', serif;
+            /* Fonte com serifa para dar toque de revista de beleza */
+            font-size: 1.8rem;
             margin-bottom: 15px;
             text-align: center;
             color: var(--text-main);
             font-weight: 700;
-            line-height: 1.3;
+            line-height: 1.25;
         }
 
         p.subtitle {
@@ -91,7 +94,8 @@
             color: var(--text-light);
             margin-bottom: 25px;
             font-size: 1.05rem;
-            line-height: 1.5;
+            line-height: 1.6;
+            font-weight: 400;
         }
 
         .benefits-list {
@@ -100,21 +104,24 @@
         }
 
         .benefits-list li {
-            padding: 12px 0;
-            border-bottom: 1px solid #f0f0f0;
+            padding: 14px 0;
+            border-bottom: 1px solid #F5EAEB;
             display: flex;
             align-items: center;
             gap: 12px;
             color: var(--text-light);
             font-weight: 500;
+            font-size: 1.05rem;
         }
 
         .benefits-list li::before {
-            content: '✨';
+            content: '💖';
+            font-size: 1.2rem;
         }
 
         .btn {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            background: linear-gradient(135deg, var(--secondary), #d98d8c);
+            /* Rosa premium */
             color: var(--white);
             border: none;
             padding: 18px;
@@ -124,7 +131,8 @@
             cursor: pointer;
             width: 100%;
             text-transform: uppercase;
-            box-shadow: 0 4px 15px rgba(201, 168, 76, 0.4);
+            letter-spacing: 0.5px;
+            box-shadow: 0 8px 20px rgba(233, 170, 169, 0.4);
             transition: all 0.3s ease;
             text-align: center;
             text-decoration: none;
@@ -133,15 +141,24 @@
         }
 
         .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(201, 168, 76, 0.6);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(233, 170, 169, 0.6);
+        }
+
+        .btn-gold {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-gold:hover {
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.5);
         }
 
         .option-btn {
             background: var(--white);
-            border: 2px solid #eaeaea;
-            padding: 20px;
-            border-radius: 12px;
+            border: 2px solid #F5EAEB;
+            padding: 22px 20px;
+            border-radius: 16px;
             font-size: 1.1rem;
             font-weight: 600;
             color: var(--text-main);
@@ -152,12 +169,19 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
         }
 
         .option-btn:hover,
         .option-btn:active {
-            border-color: var(--primary);
-            background: rgba(201, 168, 76, 0.05);
+            border-color: var(--secondary);
+            background: #FEF7F7;
+            transform: scale(1.02);
+        }
+
+        .option-btn span {
+            color: var(--secondary);
+            font-size: 1.3rem;
         }
 
         .loading-screen {
@@ -169,112 +193,174 @@
             text-align: center;
         }
 
-        .spinner {
+        /* Coração pulsante para o loading (muito mais agradável/feminino) */
+        .heart-spinner {
             width: 60px;
             height: 60px;
-            border: 5px solid #f0f0f0;
-            border-top: 5px solid var(--primary);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin-bottom: 25px;
+            background: var(--secondary);
+            position: relative;
+            transform: rotate(-45deg);
+            animation: heartPulse 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+            margin-bottom: 40px;
+            margin-top: 20px;
         }
 
-        @keyframes spin {
+        .heart-spinner::before,
+        .heart-spinner::after {
+            content: "";
+            width: 60px;
+            height: 60px;
+            background: var(--secondary);
+            position: absolute;
+            border-radius: 50%;
+        }
+
+        .heart-spinner::before {
+            top: -30px;
+            left: 0;
+        }
+
+        .heart-spinner::after {
+            left: 30px;
+            top: 0;
+        }
+
+        @keyframes heartPulse {
             0% {
-                transform: rotate(0deg);
+                transform: rotate(-45deg) scale(0.8);
+                opacity: 0.8;
+            }
+
+            50% {
+                transform: rotate(-45deg) scale(1.1);
+                opacity: 1;
             }
 
             100% {
-                transform: rotate(360deg);
+                transform: rotate(-45deg) scale(0.8);
+                opacity: 0.8;
             }
         }
 
         .progress-bar-container {
             width: 100%;
             height: 6px;
-            background: #f0f0f0;
+            background: #F5EAEB;
             display: none;
-            /* starts hidden */
+            position: absolute;
+            top: 0;
+            z-index: 10;
         }
 
         .progress-fill {
             height: 100%;
-            background: var(--primary);
+            background: linear-gradient(90deg, var(--secondary), var(--primary));
             width: 0%;
-            transition: width 0.4s ease;
+            transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         /* Result Page Styles */
         .result-box {
-            background: rgba(201, 168, 76, 0.1);
-            border: 2px solid var(--primary);
-            border-radius: 15px;
+            background: #FFFBFB;
+            border: 2px dashed var(--secondary);
+            border-radius: 18px;
             padding: 25px 20px;
             margin-bottom: 25px;
             text-align: center;
+            position: relative;
+        }
+
+        .result-box::before {
+            content: "✨";
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--white);
+            padding: 0 10px;
+            font-size: 1.5rem;
         }
 
         .highlight-badge {
-            background: var(--text-main);
-            color: var(--primary);
-            padding: 8px 15px;
+            background: var(--primary);
+            color: var(--white);
+            padding: 8px 18px;
             border-radius: 20px;
             font-size: 0.9rem;
             font-weight: 700;
             display: inline-block;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 10px rgba(212, 175, 55, 0.3);
         }
 
         .cod-highlight {
-            background: rgba(26, 122, 60, 0.1);
-            color: var(--green);
-            padding: 20px 15px;
-            border-radius: 12px;
+            background: #FEF7F7;
+            padding: 22px;
+            border-radius: 16px;
             text-align: center;
             font-weight: 700;
-            margin: 25px 0;
-            border: 2px dashed #4ADE80;
+            margin: 30px 0;
+            border: 1px solid var(--secondary);
             font-size: 1.05rem;
+            color: var(--text-main);
+            box-shadow: 0 8px 20px rgba(233, 170, 169, 0.15);
         }
 
         .testimonials {
-            margin: 35px 0;
+            margin: 35px 0 20px;
         }
 
         .testimonial-card {
-            background: #fdfbf7;
-            padding: 20px;
-            border-radius: 12px;
-            margin-bottom: 15px;
-            border-left: 4px solid var(--primary);
+            background: #FFF;
+            padding: 22px;
+            border-radius: 16px;
+            margin-bottom: 18px;
+            border: 1px solid #F5EAEB;
             font-style: italic;
             font-size: 0.95rem;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
             line-height: 1.6;
+            position: relative;
+        }
+
+        .testimonial-card::after {
+            content: '"';
+            position: absolute;
+            top: 5px;
+            right: 15px;
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            color: #F8EDED;
+            line-height: 1;
+            z-index: 0;
+        }
+
+        .testimonial-card p {
+            position: relative;
+            z-index: 1;
         }
 
         .stars {
             color: var(--primary);
-            margin-bottom: 8px;
-            font-size: 1.1rem;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
         }
 
         .btn-whatsapp {
-            background: var(--whatsapp);
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            background: var(--green);
+            box-shadow: 0 6px 15px rgba(37, 211, 102, 0.3);
             margin-top: 15px;
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
 
         .btn-whatsapp:hover {
             background: #20BA56;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
         }
 
         .top-wave {
@@ -282,10 +368,10 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 80px;
-            background: linear-gradient(135deg, var(--bg-color), #f7efe1);
-            border-bottom-left-radius: 50% 20px;
-            border-bottom-right-radius: 50% 20px;
+            height: 120px;
+            background: linear-gradient(135deg, var(--bg-color), #FEF7F7);
+            border-bottom-left-radius: 50% 30px;
+            border-bottom-right-radius: 50% 30px;
             z-index: 0;
         }
 
@@ -295,6 +381,16 @@
             display: flex;
             flex-direction: column;
             flex-grow: 1;
+        }
+
+        .progress-text {
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
     </style>
 </head>
@@ -310,36 +406,38 @@
         <div id="step-1" class="step active">
             <div class="top-wave"></div>
             <div class="step-content">
-                <div style="text-align: center; margin-bottom: 20px;">
+                <div style="text-align: center; margin-bottom: 25px; padding-top: 10px;">
                     <span
-                        style="display: inline-block; background: var(--primary); color: white; padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase;">Teste
+                        style="display: inline-block; background: var(--primary); color: white; padding: 6px 16px; border-radius: 30px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 4px 10px rgba(212, 175, 55, 0.3);">Diagnóstico
                         Rápido</span>
                 </div>
 
-                <h2 style="font-size: 1.8rem;">Descubra em 30 segundos se o Liso Mais é ideal para seu cabelo</h2>
-                <p class="subtitle">Faça o teste rápido e veja se seu cabelo pode ficar mais liso, sem frizz e com menos
-                    volume.</p>
+                <h2>Descubra em 30 segundos como o Liso Mágico pode transformar seu cabelo</h2>
+                <p class="subtitle">Responda a este teste rápido e veja como conquistar o liso perfeito, sem frizz e
+                    cheio de vida no conforto da sua casa.</p>
 
-                <ul class="benefits-list" style="margin-top: 10px;">
-                    <li>Reduz volume</li>
-                    <li>Diminui frizz</li>
-                    <li>Dá brilho espelhado</li>
-                    <li>Resultado de salão em casa</li>
+                <ul class="benefits-list" style="margin-top: 15px; margin-bottom: 35px;">
+                    <li>Redução extrema de volume</li>
+                    <li>Fim do frizz e pontas duplas</li>
+                    <li>Brilho espelhado de salão</li>
+                    <li>Fórmula suave para a saúde dos fios</li>
                 </ul>
 
-                <button class="btn" onclick="nextStep(2)">Começar o teste</button>
+                <button class="btn btn-gold" onclick="nextStep(2)">Começar o Diagnóstico 💁‍♀️</button>
             </div>
         </div>
 
         <!-- Página 2 - Pergunta 1 -->
         <div id="step-2" class="step">
             <div class="step-content">
-                <h2>Qual é o seu tipo de cabelo?</h2>
-                <div class="options-group" style="margin-top: 30px;">
-                    <button class="option-btn" onclick="nextStep(3)">Liso <span>›</span></button>
-                    <button class="option-btn" onclick="nextStep(3)">Ondulado <span>›</span></button>
-                    <button class="option-btn" onclick="nextStep(3)">Cacheado <span>›</span></button>
-                    <button class="option-btn" onclick="nextStep(3)">Crespo <span>›</span></button>
+                <div class="progress-text">Pergunta 1 de 5</div>
+                <h2 style="font-size: 1.6rem;">Como você define a estrutura do seu cabelo hoje?</h2>
+                <div class="options-group" style="margin-top: 25px;">
+                    <button class="option-btn" onclick="nextStep(3)">Ele é liso natural, mas rebelde
+                        <span>›</span></button>
+                    <button class="option-btn" onclick="nextStep(3)">Ele é ondulado e volumoso <span>›</span></button>
+                    <button class="option-btn" onclick="nextStep(3)">Meus fios são cacheados <span>›</span></button>
+                    <button class="option-btn" onclick="nextStep(3)">Tenho cabelo crespo <span>›</span></button>
                 </div>
             </div>
         </div>
@@ -347,11 +445,13 @@
         <!-- Página 3 - Pergunta 2 -->
         <div id="step-3" class="step">
             <div class="step-content">
-                <h2>Seu cabelo tem muito volume?</h2>
-                <div class="options-group" style="margin-top: 30px;">
-                    <button class="option-btn" onclick="nextStep(4)">Muito volume <span>›</span></button>
-                    <button class="option-btn" onclick="nextStep(4)">Volume médio <span>›</span></button>
-                    <button class="option-btn" onclick="nextStep(4)">Pouco volume <span>›</span></button>
+                <div class="progress-text">Pergunta 2 de 5</div>
+                <h2 style="font-size: 1.6rem;">O volume do seu cabelo te incomoda muito?</h2>
+                <div class="options-group" style="margin-top: 25px;">
+                    <button class="option-btn" onclick="nextStep(4)">Sim, é muito armado! <span>›</span></button>
+                    <button class="option-btn" onclick="nextStep(4)">Um pouco, volume médio <span>›</span></button>
+                    <button class="option-btn" onclick="nextStep(4)">Não, ele não tem muito volume
+                        <span>›</span></button>
                 </div>
             </div>
         </div>
@@ -359,11 +459,14 @@
         <!-- Página 4 - Pergunta 3 -->
         <div id="step-4" class="step">
             <div class="step-content">
-                <h2>Você sofre com frizz?</h2>
-                <div class="options-group" style="margin-top: 30px;">
-                    <button class="option-btn" onclick="nextStep(5)">Muito frizz <span>›</span></button>
-                    <button class="option-btn" onclick="nextStep(5)">Um pouco de frizz <span>›</span></button>
-                    <button class="option-btn" onclick="nextStep(5)">Quase nada <span>›</span></button>
+                <div class="progress-text">Pergunta 3 de 5</div>
+                <h2 style="font-size: 1.6rem;">Aquele frizz no topo da cabeça costuma aparecer?</h2>
+                <div class="options-group" style="margin-top: 25px;">
+                    <button class="option-btn" onclick="nextStep(5)">Sim, é impossível de controlar
+                        <span>›</span></button>
+                    <button class="option-btn" onclick="nextStep(5)">Aparece um pouquinho <span>›</span></button>
+                    <button class="option-btn" onclick="nextStep(5)">Quase nada, meu problema é outro
+                        <span>›</span></button>
                 </div>
             </div>
         </div>
@@ -371,11 +474,12 @@
         <!-- Página 5 - Pergunta 4 -->
         <div id="step-5" class="step">
             <div class="step-content">
-                <h2>Seu cabelo já tem química?</h2>
-                <div class="options-group" style="margin-top: 30px;">
-                    <button class="option-btn" onclick="nextStep(6)">Sim <span>›</span></button>
-                    <button class="option-btn" onclick="nextStep(6)">Não <span>›</span></button>
-                    <button class="option-btn" onclick="nextStep(6)">Já teve no passado <span>›</span></button>
+                <div class="progress-text">Pergunta 4 de 5</div>
+                <h2 style="font-size: 1.6rem;">E sobre química (coloração, descoloração ou outro alisamento)?</h2>
+                <div class="options-group" style="margin-top: 25px;">
+                    <button class="option-btn" onclick="nextStep(6)">Sim, faço com frequência <span>›</span></button>
+                    <button class="option-btn" onclick="nextStep(6)">Não, meu cabelo é virgem <span>›</span></button>
+                    <button class="option-btn" onclick="nextStep(6)">Já tive química, mas parei <span>›</span></button>
                 </div>
             </div>
         </div>
@@ -383,12 +487,16 @@
         <!-- Página 6 - Pergunta 5 -->
         <div id="step-6" class="step">
             <div class="step-content">
-                <h2>Qual resultado você quer para o seu cabelo?</h2>
-                <div class="options-group" style="margin-top: 30px;">
-                    <button class="option-btn" onclick="startAnalysis()">Mais liso <span>›</span></button>
-                    <button class="option-btn" onclick="startAnalysis()">Reduzir volume <span>›</span></button>
-                    <button class="option-btn" onclick="startAnalysis()">Tirar frizz <span>›</span></button>
-                    <button class="option-btn" onclick="startAnalysis()">Mais brilho <span>›</span></button>
+                <div class="progress-text">Última pergunta!</div>
+                <h2 style="font-size: 1.6rem;">Qual é o seu maior desejo maravilhoso para o seu cabelo?</h2>
+                <div class="options-group" style="margin-top: 25px;">
+                    <button class="option-btn" onclick="startAnalysis()">Acordar com ele Lisinho <span>✨</span></button>
+                    <button class="option-btn" onclick="startAnalysis()">Baixar bastante o volume
+                        <span>✨</span></button>
+                    <button class="option-btn" onclick="startAnalysis()">Dar adeus total ao Frizz
+                        <span>✨</span></button>
+                    <button class="option-btn" onclick="startAnalysis()">Um brilho espelhado incrível
+                        <span>✨</span></button>
                 </div>
             </div>
         </div>
@@ -396,82 +504,86 @@
         <!-- Página 7 - Tela de Análise -->
         <div id="step-loading" class="step">
             <div class="loading-screen">
-                <div class="spinner"></div>
-                <h2 id="loading-text" style="color: var(--primary-dark);">Analisando suas respostas...</h2>
-                <p class="subtitle" style="margin-top: 20px;">Estamos verificando se o Liso Mais é ideal para seu tipo
-                    de cabelo.<br><br>Isso leva apenas alguns segundos.</p>
+                <div class="heart-spinner"></div>
+                <h2 id="loading-text" style="color: var(--text-main); font-size: 1.7rem;">Analisando seu perfil
+                    capilar...</h2>
+                <p class="subtitle" style="margin-top: 15px; max-width: 250px;">Estamos avaliando qual transformação o
+                    Liso Mágico fará nos seus fios.</p>
             </div>
         </div>
 
         <!-- Página 8 - Resultado do Quiz -->
         <div id="step-result" class="step">
             <div class="step-content">
-                <h2 style="color: var(--primary-dark);">Resultado do seu teste</h2>
+                <h2 style="color: var(--text-main); font-size: 2rem;">Boas Notícias! 🎉</h2>
 
                 <div class="result-box">
-                    <p style="font-weight: 600; font-size: 1.1rem; line-height: 1.6; color: var(--text-main);">Pelas
-                        suas respostas, seu cabelo tem <strong
-                            style="color: var(--primary-dark); font-size: 1.2rem;">grande chance</strong> de ficar mais
-                        alinhado usando o Liso Mais.</p>
+                    <p style="font-weight: 500; font-size: 1.1rem; line-height: 1.6; color: var(--text-main);">Pelas
+                        suas respostas, o <strong>Liso Mágico</strong> é exatamente o que seu cabelo precisa. Seu fio
+                        tem <strong style="color: var(--secondary); font-size: 1.3rem;">alta compatibilidade</strong>
+                        para uma transformação incrível!</p>
                 </div>
 
                 <p class="subtitle"
-                    style="text-align: left; margin-bottom: 5px; font-weight: 700; color: var(--text-main);">Esse
-                    tratamento capilar ajuda a:</p>
-                <ul class="benefits-list" style="margin-bottom: 25px;">
-                    <li>Reduzir volume</li>
-                    <li>Eliminar frizz</li>
-                    <li>Deixar os fios mais lisos e brilhosos</li>
+                    style="text-align: left; margin-bottom: 5px; font-weight: 700; color: var(--text-main);">O que vai
+                    acontecer nas próximas semanas:</p>
+                <ul class="benefits-list" style="margin-bottom: 30px;">
+                    <li>Redução poderosa de volume</li>
+                    <li>Selagem completa do frizz</li>
+                    <li>Fios visivelmente mais sedosos e brilhantes</li>
                 </ul>
 
                 <div
-                    style="background: #fff; border: 1px solid #eaeaea; border-radius: 15px; padding: 25px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.03);">
-                    <div class="highlight-badge">Tratamento Liso Mais</div>
+                    style="background: #FFF; border: 1px solid #F5EAEB; border-radius: 18px; padding: 25px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.02);">
+                    <div class="highlight-badge">Tratamento Premium</div>
                     <ul class="benefits-list" style="text-align: left; margin-bottom: 0;">
-                        <li>Sem formol</li>
-                        <li>Compatível com química</li>
-                        <li>Não arde os olhos</li>
-                        <li>Não tem cheiro forte</li>
-                        <li>Resultado de salão em casa</li>
+                        <li>Livre de Formol (Não Arde!)</li>
+                        <li>Compatível com Químicas</li>
+                        <li>Fragrância agradável e suave</li>
+                        <li>Seguro, você mesma aplica em casa</li>
                     </ul>
                 </div>
 
                 <div class="cod-highlight">
-                    📦 PAGAMENTO SOMENTE NA ENTREGA<br>
+                    📦 COMPRE COM SEGURANÇA TOTAL!<br>
                     <span
-                        style="font-size: 0.9rem; font-weight: 500; display: block; margin-top: 8px; color: var(--text-main);">Você
-                        faz o pedido agora e só paga quando o produto chegar na sua casa.</span>
+                        style="font-size: 0.95rem; font-weight: 500; display: block; margin-top: 12px; color: var(--text-light); line-height: 1.5;">Você
+                        faz o seu pedido agora e <strong>só paga quando a caixinha chegar</strong> na sua casa. Risco
+                        Zero!</span>
                 </div>
 
                 <div class="testimonials">
                     <h3
-                        style="text-align: center; font-size: 1.15rem; margin-bottom: 20px; color: var(--text-main); font-weight: 700;">
-                        Mais de 5.000 mulheres já usam Liso Mais</h3>
+                        style="text-align: center; font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-bottom: 25px; color: var(--text-main); font-weight: 700;">
+                        Mais de 5.000 mulheres já transformaram seus cabelos:</h3>
 
                     <div class="testimonial-card">
-                        <div class="stars">★★★★★</div>
-                        "Meu cabelo tinha muito frizz e volume, depois do Liso Mais ficou muito mais alinhado."
+                        <p>
+                            <span class="stars">★★★★★</span><br>
+                            "Nossa, eu não acreditava. Meu cabelo ficava muito armado com o secador. Usei o Liso Mágico
+                            e agora eu lavo, deixo secar natural e ele fica baixinho e sem nenhum frizz. Perfeito!"
+                        </p>
                     </div>
 
                     <div class="testimonial-card">
-                        <div class="stars">★★★★★</div>
-                        "Produto maravilhoso, deixou meu cabelo brilhoso e macio."
+                        <p>
+                            <span class="stars">★★★★★</span><br>
+                            "Comprei com medo, mas a opção de pagar na entrega me deu segurança. O cheiro é ótimo não
+                            ardeu nada os olhos. Cabelo ficou soltinho e maravilhoso."
+                        </p>
                     </div>
                 </div>
 
-                <div style="margin-top: 10px; display: flex; flex-direction: column; gap: 15px; margin-bottom: 20px;">
-                    <!-- Direciona para a página de vendas principal (assumindo que seja lisomagico.shop ou a página raiz) -->
-                    <!-- Como este quiz vai ficar num subdomínio, redirecionamos para o domínio principal da oferta -->
-                    <a href="https://lisomagico.shop/" class="btn">Ver oferta especial</a>
+                <div style="margin-top: 15px; display: flex; flex-direction: column; gap: 15px; margin-bottom: 25px;">
+                    <a href="https://lisomagico.shop/" class="btn btn-gold">🥰 Garantir a Transformação!</a>
 
-                    <!-- Link do WhatsApp configurado conforme a mensagem padrão e o número que adicionamos há pouco -->
-                    <a href="https://wa.me/5598981051322?text=Oi%20linda!%20Vi%20que%20voc%C3%AA%20acabou%20de%20fazer%20o%20teste%20do%20cabelo%20do%20Liso%20Mais.%20Pelas%20suas%20respostas%20ele%20pode%20ajudar%20bastante%20no%20seu%20tipo%20de%20cabelo.%20Quer%20que%20eu%20te%20explique%20como%20funciona%20o%20pedido%20com%20pagamento%20na%20entrega%3F"
+                    <a href="https://wa.me/5598981051322?text=Oi%20linda!%20Vi%20que%20voc%C3%AA%20acabou%20de%20fazer%20o%20teste%20de%20diagn%C3%B3stico%20do%20Liso%20M%C3%A1gico.%20Pelas%20suas%20respostas%2C%20ele%20vai%20ser%20perfeito%20pra%20voc%C3%AA!%20Quer%20que%20eu%20te%20ajude%20a%20garantir%20o%20seu%20pagando%20s%C3%B3%20na%20entrega%3F"
                         class="btn btn-whatsapp" target="_blank">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white">
                             <path
                                 d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
                         </svg>
-                        Falar com especialista
+                        Tire suas Dúvidas no WhatsApp
                     </a>
                 </div>
             </div>
@@ -484,53 +596,47 @@
         const progressFill = document.getElementById('progressFill');
 
         function nextStep(stepNumber) {
-            // Ocultar todos os passos
             document.querySelectorAll('.step').forEach(step => {
                 step.classList.remove('active');
             });
 
-            // Mostrar a barra de progresso a partir da primeira pergunta (step 2)
             if (stepNumber > 1 && stepNumber <= 6) {
                 progressBarContainer.style.display = 'block';
-                // Calculamos o progresso baseado na pergunta atual
                 const progress = ((stepNumber - 1) / totalQuestions) * 100;
                 progressFill.style.width = progress + '%';
             } else {
                 progressBarContainer.style.display = 'none';
             }
 
-            // Mostrar o próximo passo
             const targetStep = document.getElementById('step-' + stepNumber);
             if (targetStep) targetStep.classList.add('active');
-            window.scrollTo(0, 0);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         function startAnalysis() {
-            // Ocultar todos
             document.querySelectorAll('.step').forEach(step => {
                 step.classList.remove('active');
             });
 
-            // Esconder barra de progresso e mostrar tela de "loading"
             progressBarContainer.style.display = 'none';
 
             const loadingStep = document.getElementById('step-loading');
             loadingStep.classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
 
-            // Simular progresso do "processamento"
             setTimeout(() => {
-                document.getElementById('loading-text').innerText = "Analisando perfil capilar...";
+                document.getElementById('loading-text').innerText = "Processando suas respostas...";
             }, 1200);
 
             setTimeout(() => {
-                document.getElementById('loading-text').innerText = "Gerando resultados...";
+                document.getElementById('loading-text').innerText = "Quase pronto! Gerando resultado...";
             }, 2200);
 
             setTimeout(() => {
                 loadingStep.classList.remove('active');
                 document.getElementById('step-result').classList.add('active');
-                window.scrollTo(0, 0);
-            }, 3500);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }, 3600);
         }
     </script>
 
